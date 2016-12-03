@@ -70,14 +70,15 @@ project ComPWA
 	: requirements 
 	  <include>.
 	  <cxxflags>-ftemplate-depth-256
-	  <cxxflags>-std=c++11
+	  <cxxflags>-std=c++0x
+	  <cxxflags>-fPIC
 	  <cxxflags>-DBOOST_SPIRIT_USE_PHOENIX_V3
 	  <warnings>off
 	  
 	  #Static linking of std lib. In case that different 
 	  #compiler versions are used we are on the safe side
-	  <toolset>gcc:<linkflags>-static-libgcc 
-	  <toolset>gcc:<linkflags>-static-libstdc++
+	  #<toolset>gcc:<linkflags>-static-libgcc 
+	  #<toolset>gcc:<linkflags>-static-libstdc++
 
       <library>/boost//system
       <library>/boost//log #Logging is needed by all libraries
@@ -86,7 +87,8 @@ project ComPWA
     : usage-requirements #flags are automatically added to depended projects
       <include>.
       <define>BOOST_LOG_DYN_LINK
-      <cxxflags>-std=c++11
+      <cxxflags>-std=c++0x
+	  <cxxflags>-fPIC
       <cxxflags>-DBOOST_SPIRIT_USE_PHOENIX_V3
       
 ;
@@ -96,7 +98,7 @@ project ComPWA
 # disabling/enabling the appropriate subprojects. Of course the appropriate if statements have to be inserted around build-project rules
 # and library sources etc...
 
-constant build_test : 1 ;
+constant build_test : 0 ;
 
 constant build_Physics : 1 ;
 constant build_AmplitudeSum : 1 ;

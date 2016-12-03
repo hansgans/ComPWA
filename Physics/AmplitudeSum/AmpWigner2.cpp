@@ -94,7 +94,7 @@ bool WignerDStrategy::execute(ParameterList& paras,
 
 	std::shared_ptr<MultiDouble> _angle = paras.GetMultiDouble(0);
 
-	std::vector<double> results(_angle->GetNValues(), 0.);
+	std::vector<double> results(_angle->GetNValues());
 	for(unsigned int ele=0; ele<_angle->GetNValues(); ele++){
 		try{
 			results.at(ele)=AmpWigner2::dynamicalFunction(
