@@ -9,9 +9,6 @@
 //		Peter Weidenkaff -
 //-------------------------------------------------------------------------------
 
-#include <boost/log/trivial.hpp>
-using namespace boost::log;
-
 #include "Core/DataPoint.hpp"
 #include "Core/Kinematics.hpp"
 #include "Core/PhysConst.hpp"

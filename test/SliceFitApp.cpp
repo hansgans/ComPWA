@@ -74,7 +74,7 @@ unsigned int nBins=200;
  * The main function.
  */
 int main(int argc, char **argv){
-	boost::log::core::get()->set_filter(trivial::severity >= trivial::debug); //setting log level
+	Logging log("",boost::log::trivial::info); //initialize logging
 	BOOST_LOG_TRIVIAL(info) << "  ComPWA Copyright (C) 2013  Mathias Michel ";
 	BOOST_LOG_TRIVIAL(info) << "  This program comes with ABSOLUTELY NO WARRANTY; for details see license.txt";
 	BOOST_LOG_TRIVIAL(info) << std::endl;

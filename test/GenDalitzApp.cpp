@@ -27,12 +27,8 @@
 #include <boost/foreach.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
-#include <boost/log/trivial.hpp>
-#include <boost/log/core.hpp>
-#include <boost/log/expressions.hpp>
 #include <boost/progress.hpp>
 #include <boost/filesystem.hpp>
-using namespace boost::log;
 
 // Root header files go here
 #include "TMath.h"
@@ -47,14 +43,17 @@ using namespace boost::log;
 
 // Physics Interface header files go here
 #include "Core/PhysConst.hpp"
-#include "Physics/AmplitudeSum/AmpSumIntensity.hpp"
+#include "Core/Logging.hpp"
 #include "Core/Parameter.hpp"
 #include "Core/ParameterList.hpp"
-#include "Physics/DPKinematics/DalitzKinematics.hpp"
 #include "Core/DataPoint.hpp"
 #include "Core/Efficiency.hpp"
+#include "Core/ProgressBar.hpp"
+#include "Physics/DPKinematics/DalitzKinematics.hpp"
+#include "Physics/AmplitudeSum/AmpSumIntensity.hpp"
 
 using namespace std;
+using namespace boost::log;
 
 const unsigned int MaxEvents = 50000;
 
@@ -78,7 +77,7 @@ int main(int argc, char **argv) {
 	if (argc > 4)
 		output_file_suffix = argv[4];
 
-	boost::log::core::get()->set_filter(trivial::severity >= trivial::info); //setting log level
+	Logging log("",boost::log::trivial::info); //initialize logging
 	BOOST_LOG_TRIVIAL(info)<< "  ComPWA Copyright (C) 2013  Mathias Michel ";
 	BOOST_LOG_TRIVIAL(info)<< "  This program comes with ABSOLUTELY NO WARRANTY; for details see license.txt";
 	BOOST_LOG_TRIVIAL(info)<< "";

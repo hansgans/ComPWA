@@ -28,14 +28,15 @@
 #include <memory>
 
 // ComPWA header files go here
-#include "DataReader/RootReader/RootReader.hpp"
-#include "Physics/BreitWigner/BreitWigner.hpp"
-#include "Estimator/MinLogLH/MinLogLH.hpp"
-#include "Optimizer/Minuit2/MinuitIF.hpp"
 #include "Core/Efficiency.hpp"
 #include "Core/Parameter.hpp"
 #include "Core/ParameterList.hpp"
 #include "Core/RunManager.hpp"
+#include "Core/Logging.hpp"
+#include "DataReader/RootReader/RootReader.hpp"
+#include "Physics/BreitWigner/BreitWigner.hpp"
+#include "Estimator/MinLogLH/MinLogLH.hpp"
+#include "Optimizer/Minuit2/MinuitIF.hpp"
 
 #include "Physics/DPKinematics/RootEfficiency.hpp"
 //Test header files go here
@@ -46,7 +47,7 @@
  * The main function.
  */
 int main(int argc, char **argv){
-  boost::log::core::get()->set_filter(trivial::severity >= trivial::debug); //setting log level
+	Logging log("",boost::log::trivial::info); //initialize logging
   std::cout << "  ComPWA Copyright (C) 2013  Mathias Michel " << std::endl;
   std::cout << "  This program comes with ABSOLUTELY NO WARRANTY; for details see license.txt" << std::endl;
   std::cout << std::endl;

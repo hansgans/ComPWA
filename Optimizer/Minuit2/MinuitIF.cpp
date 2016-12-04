@@ -9,13 +9,11 @@
 //     Mathias Michel - initial API and implementation
 //-------------------------------------------------------------------------------
 #include <vector>
-#include <time.h>
+#include <ctime>
 #include <string>
 #include <sstream>
 #include <iostream>
 #include <memory>
-
-#include <boost/timer.hpp>
 
 #include "Minuit2/MnUserParameters.h"
 #include "Minuit2/MnMigrad.h"
@@ -58,7 +56,7 @@ MinuitIF::~MinuitIF()
 
 std::shared_ptr<FitResult> MinuitIF::exec(ParameterList& par)
 {
-	boost::timer time;
+	auto start = std::clock();
 	par.RemoveDuplicates();
 
 	ParameterList initialParList;
@@ -223,7 +221,7 @@ std::shared_ptr<FitResult> MinuitIF::exec(ParameterList& par)
 	);
 	result->setFinalParameters(finalParList);
 	result->setInitialParameters(initialParList);
-	result->setTime(time.elapsed());
+	result->setTime( (std::clock()-start)/CLOCKS_PER_SEC );
 
 	//update parameters in amplitude
 	Amplitude::UpdateAmpParameterList(estimator->getAmplitudes(), finalParList);

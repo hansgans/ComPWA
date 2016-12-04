@@ -24,10 +24,8 @@
 #include <iostream>
 #include <vector>
 
-#include <boost/log/trivial.hpp>
-using namespace boost::log;
-
 #include "Core/Kinematics.hpp"
+#include "Core/Logging.hpp"
 
 class DalitzKinematics : public Kinematics
 {

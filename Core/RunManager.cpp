@@ -16,26 +16,22 @@
 #include <ctime>
 #include <numeric>
 
-#include <time.h>
+//#include <boost/random/linear_congruential.hpp>
+//#include <boost/random/uniform_int.hpp>
+//#include <boost/random/uniform_real.hpp>
+//#include <boost/random/variate_generator.hpp>
+//#include <boost/generator_iterator.hpp>
 
-#include <boost/random/linear_congruential.hpp>
-#include <boost/random/uniform_int.hpp>
-#include <boost/random/uniform_real.hpp>
-#include <boost/random/variate_generator.hpp>
-#include <boost/generator_iterator.hpp>
-#include <boost/log/trivial.hpp>
-#include <boost/progress.hpp>
-
-#include "DataReader/Data.hpp"
-#include "Estimator/Estimator.hpp"
-#include "Optimizer/Optimizer.hpp"
 #include "Core/ParameterList.hpp"
+#include "Core/Logging.hpp"
 #include "Core/Event.hpp"
 #include "Core/Generator.hpp"
 #include "Core/ProgressBar.hpp"
+#include "DataReader/Data.hpp"
+#include "Estimator/Estimator.hpp"
+#include "Optimizer/Optimizer.hpp"
 
 #include "Core/RunManager.hpp"
-using namespace boost::log;
 
 RunManager::RunManager()
 {

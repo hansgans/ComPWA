@@ -21,9 +21,6 @@
 #include "Core/Generator.hpp"
 #include "TParticle.h"
 #include "TParticlePDG.h"
-#include <boost/log/trivial.hpp>
-#include <boost/log/core.hpp>
-using namespace boost::log;
 
 RootReader::RootReader()
 {

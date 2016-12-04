@@ -27,6 +27,7 @@
 //PWA-Headers
 #include "Core/Event.hpp"
 #include "Core/DataPoint.hpp"
+#include "Core/Logging.hpp"
 #include "DataReader/Data.hpp"
 #include "DataReader/DataCorrection.hpp"
 

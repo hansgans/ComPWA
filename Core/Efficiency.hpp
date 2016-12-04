@@ -13,10 +13,9 @@
 
 #include <iostream>
 #include <vector>
-#include <boost/log/trivial.hpp>
-//#include "Core/DataPoint.hpp"
+#include "Core/Logging.hpp"
+
 class dataPoint;
-using namespace boost::log;
 
 /**
  *  \class DalitzEfficiency

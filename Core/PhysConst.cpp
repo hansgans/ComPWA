@@ -11,12 +11,11 @@
 #include <exception>
 
 #include "Core/PhysConst.hpp"
+#include "Core/Logging.hpp"
 // Boost header files go here
 #include <boost/foreach.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
-#include <boost/log/trivial.hpp>
-using namespace boost::log;
 
 PhysConst* PhysConst::inst = NULL;
 

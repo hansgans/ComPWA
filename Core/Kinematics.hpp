@@ -14,6 +14,7 @@
 
 #include <vector>
 #include <memory>
+#include <complex>
 
 #include "Core/Logging.hpp"
 
