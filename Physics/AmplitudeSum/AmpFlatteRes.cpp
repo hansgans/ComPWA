@@ -576,7 +576,9 @@ std::shared_ptr<FunctionTree> FlatteStrategy::SetupTree( std::string name,
 		std::shared_ptr<MultiDouble> vecmd(
 				new MultiDouble(
 						"zero",
-						std::vector<double>(mSq->GetNValues(), 0.0)
+						std::vector<double>(
+							mSq->GetNValues()
+						)
 				)
 		);
 		std::shared_ptr<MultiComplex> veccd(
