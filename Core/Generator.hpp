@@ -13,6 +13,7 @@
 #define GENERATOR_HPP_
 #include "Core/Event.hpp"
 
+namespace COMPWA {
 /**
  *  \class Generator
  *  \brief Virtual class for PHSP generators
@@ -30,6 +31,7 @@ public:
 	virtual double getGaussDist(double mu, double sigma) { return 0; }
 
 };
+}
 
 
 #endif /* GENERATOR_HPP_ */

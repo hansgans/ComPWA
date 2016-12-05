@@ -34,6 +34,8 @@
 #include "DataReader/Data.hpp"
 #include "Core/Amplitude.hpp"
 
+namespace COMPWA {
+
 struct dataInfo{
   std::string name;
   std::shared_ptr<Data> data;
@@ -112,4 +114,5 @@ protected:
 
 };
 
+}
 #endif /* _DICTIONARY_HPP_ */

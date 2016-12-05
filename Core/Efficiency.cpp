@@ -12,6 +12,7 @@
 #include "Core/Logging.hpp"
 #include "Core/Efficiency.hpp"
 
+namespace COMPWA {
 Efficiency::Efficiency()
 {
 
@@ -26,3 +27,5 @@ UnitEfficiency::UnitEfficiency()
 {
 	BOOST_LOG_TRIVIAL(info)<<"Efficiency: creating UnitEfficiency!";
 };
+
+}

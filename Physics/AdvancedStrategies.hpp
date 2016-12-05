@@ -8,6 +8,7 @@
 #ifndef PHYSICS_AMPLITUDESUM_ADVANCEDSTRATEGIES_HPP_
 #define PHYSICS_AMPLITUDESUM_ADVANCEDSTRATEGIES_HPP_
 
+namespace COMPWA {
 class phspFactorStrat : public Strategy
 {
 public:
@@ -274,5 +275,5 @@ public:
 		return true;
 	}
 };
-
+}
 #endif /* PHYSICS_AMPLITUDESUM_ADVANCEDSTRATEGIES_HPP_ */

@@ -19,6 +19,7 @@
 #include <vector>
 #include <memory>
 
+namespace COMPWA {
 class TIterator;
 class DoubleParameter;
  
@@ -54,5 +55,5 @@ private:
 
   //ClassDef(PhiSumOfAmplitudes,1) // Your description goes here...
 };
- 
+}
 #endif

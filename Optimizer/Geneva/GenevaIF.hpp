@@ -37,6 +37,7 @@
 // Geneva header files go here
 #include "geneva/Go2.hpp"
 
+namespace COMPWA {
 class GenevaIF : public Optimizer {
 
 public:
@@ -59,5 +60,5 @@ private:
   std::string ip;
   unsigned int port;
 };
-
+}
 #endif /* _GENEVAIF_HPP */

@@ -12,8 +12,10 @@
 #include <complex>
 #include <iostream>
 #include "Physics/DPKinematics/SimpleEfficiency.hpp"
-ClassImp(SimpleEfficiency);
 
+ClassImp(COMPWA::SimpleEfficiency);
+
+namespace COMPWA {
 SimpleEfficiency::~SimpleEfficiency()
 {
 	delete passedHist;
@@ -133,4 +135,5 @@ void SimpleEfficiency::SetTitle(const char* title)
 	teffTitle.ReplaceAll(" (total)","");
 	TNamed::SetTitle(teffTitle);
 	return;
+}
 }

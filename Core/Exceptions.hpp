@@ -25,6 +25,7 @@
 #include <string>
 
 
+namespace COMPWA {
 class Exception : public std::exception {
 public:
   Exception(const Exception& e) throw() :
@@ -181,6 +182,7 @@ public:
   {}
   virtual ~ParameterOutOfBound () throw() {}
 };
+}
 #endif
 //******************************************************************************
 //! EOF

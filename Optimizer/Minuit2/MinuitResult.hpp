@@ -38,6 +38,7 @@
 #include "Minuit2/MnUserParameterState.h"
 #include "Minuit2/FunctionMinimum.h"
 
+namespace COMPWA {
 using namespace ROOT::Minuit2;
 
 class MinuitResult : public FitResult
@@ -47,10 +48,12 @@ public:
 	MinuitResult();
 
 	//Constructor
-	MinuitResult(std::shared_ptr<ControlParameter> esti, FunctionMinimum result);
+	MinuitResult(std::shared_ptr<ControlParameter> esti,
+			ROOT::Minuit2::FunctionMinimum result);
 
 	//! Set Minuit2 function minimum
-	void setResult(std::shared_ptr<ControlParameter> esti, FunctionMinimum result);
+	void setResult(std::shared_ptr<ControlParameter> esti,
+			ROOT::Minuit2::FunctionMinimum result);
 
 	//! Return final likelihood value
 	double getResult(){ return finalLH; }
@@ -245,5 +248,6 @@ private:
 #endif
 
 };
+}
 
 #endif

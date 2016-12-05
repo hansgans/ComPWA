@@ -30,6 +30,7 @@
 #include "Core/Logging.hpp"
 #include "Optimizer/Minuit2/MinuitIF.hpp"
 
+namespace COMPWA {
 double shiftAngle(double v)
 {
 	double originalVal = v;
@@ -228,4 +229,4 @@ std::shared_ptr<FitResult> MinuitIF::exec(ParameterList& par)
 
 	return result;
 }
-
+}

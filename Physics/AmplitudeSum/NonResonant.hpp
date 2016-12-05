@@ -13,6 +13,7 @@
 #include "Core/Parameter.hpp"
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 
+namespace COMPWA {
 class NonResonant : public AmpAbsDynamicalFunction
 {
 public:
@@ -59,4 +60,5 @@ public:
 	virtual std::shared_ptr<FunctionTree> SetupTree(
 			ParameterList& sample, ParameterList& toySample,std::string suffix);
 };
+}
 #endif /* NONRESONANT_HPP_ */

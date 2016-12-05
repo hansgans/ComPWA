@@ -21,6 +21,7 @@
 #include "Core/Particle.hpp"
 #include "Core/ParameterList.hpp"
 
+namespace COMPWA {
 SliceFit::SliceFit(std::shared_ptr<AmpSumIntensity> inPIF,
 		std::shared_ptr<Data> inDIF, ParameterList& inPar,
 		unsigned int startEvent, unsigned int nEvents)
@@ -301,4 +302,5 @@ double SliceFit::controlParameter(ParameterList& minPar){
   }//end slices
 
   return 0;*/
+}
 }

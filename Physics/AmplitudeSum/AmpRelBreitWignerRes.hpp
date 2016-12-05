@@ -30,6 +30,7 @@
 #include "Physics/AmplitudeSum/AmpWigner2.hpp"
 #include "Physics/AmplitudeSum/NonResonant.hpp"
 
+namespace COMPWA {
 class AmpRelBreitWignerRes : public AmpAbsDynamicalFunction {
 public:
 
@@ -120,4 +121,5 @@ public:
 protected:
 	std::string name;
 };
+}
 #endif

@@ -12,6 +12,7 @@
 #include "Core/Exceptions.hpp"
 #include "Core/DataPoint.hpp"
 
+namespace COMPWA {
 DalitzHistEfficiency::DalitzHistEfficiency(TEfficiency* eff) : effHist(new TEfficiency(*eff)){
 	BOOST_LOG_TRIVIAL(debug) << "DalitzHistEfficiency: creating efficiency from existing TEfficiency object!";
 }
@@ -49,4 +50,5 @@ double DalitzAngleHistEfficiency::evaluate(dataPoint& point){
 	TH2D* test = (TH2D*) effHist->GetPassedHistogram();
 	int globalBin = test->FindBin(m23sq,angle);
 	return effHist->GetEfficiency(globalBin);
+}
 }

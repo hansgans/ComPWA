@@ -27,6 +27,7 @@
 #include "Core/Kinematics.hpp"
 #include "Core/Logging.hpp"
 
+namespace COMPWA {
 class DalitzKinematics : public Kinematics
 {
 
@@ -194,5 +195,6 @@ protected:
 	double _DParea;	//! phsp area
 
 };
+}
 
 #endif

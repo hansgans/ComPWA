@@ -18,6 +18,7 @@
 #include "Core/DataPoint.hpp"
 #include "Core/FunctionTree.hpp"
 
+namespace COMPWA {
 class Resonance
 {
 public:
@@ -106,4 +107,5 @@ struct resIsEnabled {
 typedef boost::filter_iterator<resIsEnabled,
 		std::vector<std::shared_ptr<Resonance> >::iterator> resonanceItr;
 
+}
 #endif /* CORE_RESONANCE_HPP_ */

@@ -7,6 +7,7 @@
 #include "../Core/Amplitude.hpp"
 #include "Estimator.hpp"
 
+namespace COMPWA {
 class ParameterList;
 
 class AmpFcn : public Estimator
@@ -41,5 +42,5 @@ private:
 
 
 };
-
+}
 #endif

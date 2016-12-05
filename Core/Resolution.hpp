@@ -8,6 +8,7 @@
 #ifndef CORE_RESOLUTION_HPP_
 #define CORE_RESOLUTION_HPP_
 
+namespace COMPWA {
 
 class Resolution
 {
@@ -31,5 +32,6 @@ public:
 	}
 
 };
+}
 
 #endif /* CORE_RESOLUTION_HPP_ */

@@ -15,6 +15,8 @@
 #include "Core/DataPoint.hpp"
 #include "Core/Logging.hpp"
 
+namespace COMPWA {
+
 void dataPoint::init()
 {
 	var = std::vector<double>(Kinematics::instance()->GetNVars(), 0);
@@ -135,4 +137,6 @@ std::ostream & operator<<(std::ostream &os, const dataPoint &p)
 	for(int i=0; i<varNames.size(); i++)
 		os << varNames.at(i) << "="<<p.getVal(i)<<" ";
 	return os;
+}
+
 }

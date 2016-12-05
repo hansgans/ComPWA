@@ -29,6 +29,7 @@
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
+namespace COMPWA {
 class AmpSumIntensity : public Amplitude {
 
 public:
@@ -238,5 +239,6 @@ protected:
 	std::shared_ptr<FunctionTree> setupBasicTree(ParameterList& sample,
 			ParameterList& phspSample);
 };
+}
 
 #endif

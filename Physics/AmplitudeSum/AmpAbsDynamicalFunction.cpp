@@ -25,6 +25,7 @@
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 #include "Physics/AdvancedStrategies.hpp"
 
+namespace COMPWA {
 AmpAbsDynamicalFunction::AmpAbsDynamicalFunction( normStyle nS, int calls) :
 _parity(+1), _cparity(0),
 _ffType(formFactorType::BlattWeisskopf), _nCalls(calls),
@@ -962,4 +963,5 @@ bool couplingToWidthStrat::execute(ParameterList& paras,
 			new MultiComplex(out->GetName(),results)
 	);
 	return true;
+}
 }

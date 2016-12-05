@@ -26,6 +26,7 @@
 #include "Core/FitResult.hpp"
 #include "Core/Logging.hpp"
 
+namespace COMPWA {
 MinLogLH::MinLogLH(std::shared_ptr<Amplitude> amp, std::shared_ptr<Data> data,
 		std::shared_ptr<Data> phspSample,std::shared_ptr<Data> accSample,
 		unsigned int startEvent, unsigned int nEvents) :
@@ -412,3 +413,4 @@ double MinLogLH::calcPenalty()
 //	}
 //	return (_penaltyLambda*ffSum);
 //}
+}

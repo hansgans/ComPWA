@@ -10,6 +10,7 @@
 #include "Core/Logging.hpp"
 #include "DataReader/DataCorrection.hpp"
 
+namespace COMPWA {
 MomentumCorrection::MomentumCorrection(std::vector<CorrectionTable> inCorr, std::string t) :
 corrections(inCorr), title(t)
 {
@@ -44,4 +45,5 @@ void MomentumCorrection::Print() const{
 
 void UnitCorrection::Print() const {
 	BOOST_LOG_TRIVIAL(info) << "UnitCorrection::Print() | correction factors are set to one";
+}
 }

@@ -5,6 +5,7 @@
 #include "Core/Logging.hpp"
 #include "Optimizer/Geneva/GenevaResult.hpp"
 
+namespace COMPWA {
 void GenevaResult::init(boost::shared_ptr<Gem::Geneva::GStartIndividual> min){
 	finalLH = min->getBestKnownFitness();
 	min->getPar(finalParameters);
@@ -34,3 +35,4 @@ void GenevaResult::genOutput(std::ostream& out, std::string opt){
 	return;
 }
 
+}

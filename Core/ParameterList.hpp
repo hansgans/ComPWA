@@ -39,6 +39,7 @@
 #include "Core/Parameter.hpp"
 #include "Core/Exceptions.hpp"
 
+namespace COMPWA {
 class ParameterList
 {
 
@@ -730,6 +731,6 @@ namespace boost {
 	}//ns:serialization
 }//ns:boost
 #endif
-
+}
 
 #endif

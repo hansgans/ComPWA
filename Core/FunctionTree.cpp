@@ -8,6 +8,7 @@
 #include "Core/Logging.hpp"
 #include "Core/FunctionTree.hpp"
 
+namespace COMPWA {
 void FunctionTree::insertTree(std::shared_ptr<FunctionTree> inTree,
 		std::string parent)
 {
@@ -384,4 +385,5 @@ bool FunctionTree::sanityCheck(){
 
 
 	return isSane;
+}
 }

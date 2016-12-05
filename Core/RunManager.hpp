@@ -89,6 +89,7 @@
 #include "Estimator/Estimator.hpp"
 #include "Optimizer/Optimizer.hpp"
 
+namespace COMPWA {
 class DalitzKinematics;
 
 class RunManager
@@ -181,4 +182,5 @@ protected:
 	std::vector<std::shared_ptr<Data> > _dataVec;
 };
 
+}
 #endif

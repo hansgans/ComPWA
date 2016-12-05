@@ -14,6 +14,7 @@
 #include <iostream>
 #include <vector>
 
+namespace COMPWA {
 class dataPoint;
 
 /**
@@ -44,5 +45,5 @@ public:
 	virtual double evaluate(std::vector<double> x) {return 1;};
 	virtual double evaluate(dataPoint& point) {return 1;};
 };
-
+}
 #endif /* EFFICIENCY_HPP_ */

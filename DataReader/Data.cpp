@@ -2,6 +2,7 @@
 #include "Core/Logging.hpp"
 #include "DataReader/Data.hpp"
 
+namespace COMPWA {
 Data::Data(bool binning, unsigned int maxBins,double maxW) :
 fBinned(binning), fmaxBins(maxBins), maxWeight(maxW)
 {
@@ -284,4 +285,5 @@ void Data::pushEvent(const Event& evt)
 {
    fEvents.push_back(evt);
    if( evt.getWeight() > maxWeight ) maxWeight = evt.getWeight();
+}
 }

@@ -29,6 +29,7 @@
 
 #include "Physics/AmplitudeSum/AmpSumIntensity.hpp"
 
+namespace COMPWA {
 AmpSumIntensity::AmpSumIntensity(std::string name,
 		normStyle ns, std::shared_ptr<Efficiency> eff,
 		unsigned int nCalls) :
@@ -869,4 +870,5 @@ std::shared_ptr<FunctionTree> AmpSumIntensity::setupBasicTree(
 
 	BOOST_LOG_TRIVIAL(debug)<<"AmpSumIntensity::setupBasicTree(): tree constructed!!";
 	return newTree;
+}
 }

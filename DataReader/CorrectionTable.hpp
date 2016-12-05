@@ -14,6 +14,7 @@
 #include <cmath>
 #include <stdexcept>
 
+namespace COMPWA {
 class CorrectionTable
 {
 public:
@@ -149,4 +150,5 @@ protected:
 
 	std::vector<double> totalSys, totalSysError;
 };
+}
 #endif /* MOMENTUMSYSTEMATICS_HPP_ */

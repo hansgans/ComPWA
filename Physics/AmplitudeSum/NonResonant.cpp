@@ -10,6 +10,7 @@
 #include "Physics/AmplitudeSum/NonResonant.hpp"
 
 
+namespace COMPWA {
 NonResonant::NonResonant(const char *name,
 		std::shared_ptr<DoubleParameter> mag,
 		std::shared_ptr<DoubleParameter> phase,
@@ -104,4 +105,5 @@ std::shared_ptr<FunctionTree> NonResonant::SetupTree(
 //		newTree->createLeaf("NormNonRes_"+_name, unitVec2, "AbsVal_"+_name);
 	}
 	return newTree;
+}
 }

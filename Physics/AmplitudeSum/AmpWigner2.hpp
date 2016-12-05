@@ -29,6 +29,7 @@
 #include "Core/FunctionTree.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
+namespace COMPWA {
 //using namespace std;
 class AmpWigner2{
 public:
@@ -67,4 +68,5 @@ public:
 protected:
 	std::string name;
 };
+}
 #endif

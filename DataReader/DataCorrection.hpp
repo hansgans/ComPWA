@@ -13,6 +13,7 @@
 #include "Core/Event.hpp"
 #include "DataReader/CorrectionTable.hpp"
 
+namespace COMPWA {
 class DataCorrection
 {
 public:
@@ -44,6 +45,6 @@ protected:
 	std::string title;
 };
 
-
+}
 
 #endif /* DATAREADER_DATACORRECTION_HPP_ */

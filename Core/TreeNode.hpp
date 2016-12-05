@@ -31,6 +31,7 @@
 #include "Core/Parameter.hpp"
 #include "Core/ParObserver.hpp"
 
+namespace COMPWA {
 class TreeNode : public std::enable_shared_from_this<TreeNode>, public ParObserver {
 public:
 	//! Standard constructor
@@ -172,5 +173,6 @@ protected:
 
 	std::shared_ptr<Strategy> _strat; /*!< Strategy how node calculates its value */
 };
+}
 
 #endif /* _TREENODE_HPP_ */

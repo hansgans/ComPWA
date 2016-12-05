@@ -17,6 +17,7 @@
 #include <vector>
 #include <string>
 
+namespace COMPWA {
 BOOST_AUTO_TEST_SUITE(RootReaderSuite);
 
 BOOST_AUTO_TEST_CASE(ReadingCheck)
@@ -30,3 +31,4 @@ BOOST_AUTO_TEST_CASE(ReadingCheck)
 }
 
 BOOST_AUTO_TEST_SUITE_END();
+}

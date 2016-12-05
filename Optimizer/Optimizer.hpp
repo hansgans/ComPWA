@@ -30,6 +30,7 @@
 #include "Core/ParameterList.hpp"
 #include "Core/FitResult.hpp"
 
+namespace COMPWA {
 class Optimizer
 {
 
@@ -46,5 +47,6 @@ public:
   virtual std::shared_ptr<FitResult> exec(ParameterList& par) =0;
  
 };
+}
 
 #endif

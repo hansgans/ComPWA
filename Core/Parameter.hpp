@@ -33,6 +33,7 @@
 #include "Core/AbsParameter.hpp"
 #include "Core/Exceptions.hpp"
 
+namespace COMPWA {
 enum ErrorType { SYM = 1, ASYM = 2, LHSCAN = 3, NOTDEF = 0};
 
 class MultiComplex: public AbsParameter
@@ -1344,5 +1345,5 @@ protected:
 	}
 
 };
-
+}
 #endif

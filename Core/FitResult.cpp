@@ -8,6 +8,7 @@
 #include "Core/Logging.hpp"
 #include "Core/FitResult.hpp"
 
+namespace COMPWA {
 void FitResult::writeText(std::string filename){
 	std::ofstream myfile;
 	myfile.open(filename);
@@ -254,3 +255,4 @@ void FitResult::printFitFractions(TableFormater* fracTable,
 //
 //	return;
 //}
+}

@@ -8,6 +8,7 @@
 #include "Core/Logging.hpp"
 #include "Core/Functions.hpp"
 
+namespace COMPWA {
 bool Inverse::execute(ParameterList& paras,
 		std::shared_ptr<AbsParameter>& out)
 {
@@ -779,3 +780,4 @@ bool Power::execute(ParameterList& paras, std::shared_ptr<AbsParameter>& out)
 
 	return true;
 };
+}

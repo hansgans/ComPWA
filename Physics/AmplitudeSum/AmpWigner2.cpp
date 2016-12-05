@@ -21,6 +21,7 @@
 #include "Core/Logging.hpp"
 #include "Physics/AmplitudeSum/AmpWigner2.hpp"
 
+namespace COMPWA {
 AmpWigner2::AmpWigner2(unsigned int varId, unsigned int spin,
 		unsigned int mu, unsigned int muPrime) :
 		_varId(varId), _spin(spin), _mu(mu), _muPrime(muPrime)
@@ -113,4 +114,6 @@ bool WignerDStrategy::execute(ParameterList& paras,
 			new MultiDouble(out->GetName(),results));
 
 	return true;
+}
+
 }

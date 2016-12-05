@@ -16,6 +16,8 @@
 #include "Core/Particle.hpp"
 #include "Core/Event.hpp"
 
+namespace COMPWA {
+
 Event::Event():fWeight(1.),fName(""),fFlavour(0),fCharge(0),fEff(1.){
 
 }
@@ -50,4 +52,5 @@ std::ostream& operator<< (std::ostream& stream, const Event& ev){
 		stream<<i<<std::endl;
 
 	return stream;
+}
 }

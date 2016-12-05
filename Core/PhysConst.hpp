@@ -26,6 +26,7 @@
 #include <vector>
 #include <Core/Parameter.hpp>
 
+namespace COMPWA {
 class PhysConst
 {
 public:
@@ -99,5 +100,6 @@ private:
 	std::vector<double> errorConst;
 };
 
+}
 
 #endif /* PHYSCONST_HPP_ */

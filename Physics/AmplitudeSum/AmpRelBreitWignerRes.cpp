@@ -23,6 +23,7 @@
 #include "Core/Logging.hpp"
 #include "Physics/AmplitudeSum/AmpRelBreitWignerRes.hpp"
 
+namespace COMPWA {
 AmpRelBreitWignerRes::AmpRelBreitWignerRes(const char *name,
 		unsigned int varIdA, unsigned int varIdB,
 		std::shared_ptr<DoubleParameter> mag, std::shared_ptr<DoubleParameter> phase,
@@ -400,4 +401,5 @@ bool BreitWignerStrategy::execute(ParameterList& paras,
 			new MultiComplex(out->GetName(),results)
 	);
 	return true;
+}
 }

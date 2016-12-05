@@ -13,6 +13,7 @@
 #include "Core/Kinematics.hpp"
 #include "Core/PhysConst.hpp"
 
+namespace COMPWA {
 Kinematics* Kinematics::instance()
 {
 	if(!_inst) {
@@ -216,4 +217,5 @@ double TwoBodyKinematics::GetMass(std::string name) const
 	throw std::runtime_error("TwoBodyKinematics::getMass(int) | "
 			"Wrong particle "+name+" requested!");
 	return -999;
+}
 }

@@ -11,6 +11,7 @@
 #include <boost/log/trivial.hpp>
 #include <boost/log/common.hpp>
 
+namespace COMPWA {
 class Logging
 {
 public:
@@ -25,4 +26,5 @@ private:
 	void init(std::string out,boost::log::trivial::severity_level minLevel);
 
 };
+}
 #endif /* LOGGING_HPP_ */

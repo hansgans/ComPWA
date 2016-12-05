@@ -23,11 +23,13 @@
 #ifndef _PAROBSERVER_HPP_
 #define _PAROBSERVER_HPP_
 
+namespace COMPWA {
 class ParObserver
 {
 public:
     //! This function gets called by the parameter to inform observing TreeNodes
     virtual void Update() = 0;
 };
+}
 
 #endif

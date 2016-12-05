@@ -33,6 +33,7 @@
 
 //_____ D E F I N I T I O N S __________________________________________________
 
+namespace COMPWA {
 class AsciiReader : public Data {
 
 public:
@@ -48,5 +49,6 @@ public:
 	virtual void writeData(std::string file="", std::string trName="") { };
 
 };
+}
 
 #endif /* _ASCII_READER_H_ */

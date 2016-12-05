@@ -20,6 +20,7 @@
 #include "Core/Efficiency.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
+namespace COMPWA {
 /**
  *  \class DalitzHistEfficiency
  *  \brief Efficiency provided by a histogram
@@ -68,5 +69,5 @@ public:
 	~DalitzPolyEfficiency(){};
 
 };
-
+}
 #endif /* ROOTEFFICIENCY_HPP_ */

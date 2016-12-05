@@ -26,6 +26,7 @@
 #include <iostream>
 #include "Core/Particle.hpp"
 
+namespace COMPWA {
 class Event{
 
 public:
@@ -64,5 +65,5 @@ protected:
   int fCharge;
 
 };
-
+}
 #endif

@@ -33,6 +33,7 @@
 #include "Core/Amplitude.hpp"
 #include "Optimizer/ControlParameter.hpp"
 
+namespace COMPWA {
 class Estimator : public ControlParameter
 {
 
@@ -54,5 +55,5 @@ protected:
     Estimator(){ }
     virtual ~Estimator(){ /* nothing */ }
 };
-
+}
 #endif

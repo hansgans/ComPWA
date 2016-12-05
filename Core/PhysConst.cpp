@@ -17,6 +17,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 
+namespace COMPWA {
 PhysConst* PhysConst::inst = NULL;
 
 PhysConst::PhysConst(){
@@ -228,4 +229,6 @@ double PhysConst::getConstValue(std::string nnn)
 double PhysConst::getConstError(std::string nnn)
 {
 	return errorConst.at(findConstant(nnn));
+}
+
 }

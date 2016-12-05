@@ -43,6 +43,7 @@
 #include "Core/TableFormater.hpp"
 #include "Core/PhysConst.hpp"
 
+namespace COMPWA {
 class FitResult
 {
 public:
@@ -178,4 +179,5 @@ private:
 BOOST_SERIALIZATION_ASSUME_ABSTRACT( FitResult );
 #endif
 
+}
 #endif

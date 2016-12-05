@@ -8,6 +8,8 @@
 #include "Core/Logging.hpp"
 #include "Core/Amplitude.hpp"
 
+namespace COMPWA {
+
 void Amplitude::UpdateParameters(ParameterList& par)
 {
 	std::shared_ptr<DoubleParameter> pOld, pNew;
@@ -167,4 +169,6 @@ const double UnitAmp::GetNormalization() {
 	BOOST_LOG_TRIVIAL(info) << "UnitAmp::normalization() | "
 			"normalization not implemented!";
 	return 1;
+}
+
 }

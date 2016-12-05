@@ -30,10 +30,9 @@
 
 class ControlParameter;
 
-namespace ROOT {
-namespace Minuit2 {
+namespace COMPWA {
 
-class MinuitFcn : public FCNBase
+class MinuitFcn : public ROOT::Minuit2::FCNBase
 {
 public:
 	MinuitFcn(std::shared_ptr<ControlParameter> theData, ParameterList& parList);
@@ -58,8 +57,6 @@ private:
 
 };
 
-}  // namespace Minuit2
-}  // namespace ROOT
-
+}
 
 #endif 

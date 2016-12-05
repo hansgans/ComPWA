@@ -10,6 +10,7 @@
 #include "Physics/DPKinematics/RootGenerator.hpp"
 
 
+namespace COMPWA {
 RootGenerator::RootGenerator(int seed){
 	gRandom = new TRandom3(0);
 	if(seed!=-1) setSeed(seed);
@@ -66,4 +67,5 @@ void UniformTwoBodyGenerator::generate(Event& evt){
 	TLorentzVector W(0.0, 0.0, 0.0, sqrt(s));//= beam + target;
 	RootGenerator::getGenerator()->SetDecay(W, nPart, masses);
 	RootGenerator::generate(evt);
+}
 }

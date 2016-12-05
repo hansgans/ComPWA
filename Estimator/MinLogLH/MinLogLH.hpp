@@ -33,6 +33,7 @@
 #include "DataReader/Data.hpp"
 #include "Estimator/Estimator.hpp"
 
+namespace COMPWA {
 class MinLogLH : public Estimator {
 
 public:
@@ -227,5 +228,5 @@ private:
 	double _penaltyLambda; //! Scale of penalty term
 	int _penaltyAmpID; //! ID of amplitude that is used for penalty calc
 };
-
+}
 #endif /* _MINLOGLHBKG_HPP */

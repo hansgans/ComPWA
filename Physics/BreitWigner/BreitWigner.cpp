@@ -19,6 +19,7 @@
 
 using namespace std;
 
+namespace COMPWA {
 BreitWigner::BreitWigner(const double min, const double max):min_(min),max_(max)
 {
 	result.AddParameter(
@@ -109,4 +110,5 @@ const double BreitWigner::BreitWignerValue(double x, double M, double T){
 	double denom=(x*x-M*M)*(x*x-M*M)+M*M*T*T;
 
 	return 1./denom;
+}
 }

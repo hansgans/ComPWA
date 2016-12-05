@@ -17,6 +17,7 @@
 
 #include "Core/ParameterList.hpp"
 
+namespace COMPWA {
 using namespace std;
 
 class TableFormater
@@ -73,4 +74,5 @@ public:
 	virtual void header();
 	virtual void delim();
 };
+}
 #endif /* TABLEFORMATER_CXX_ */

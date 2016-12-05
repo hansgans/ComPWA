@@ -29,6 +29,7 @@
 #include "Core/FunctionTree.hpp"
 #include "Core/Amplitude.hpp"
 
+namespace COMPWA {
 class ControlParameter{
 
 public:
@@ -60,4 +61,5 @@ protected:
   int calls;
  
 };
+}
 #endif

@@ -21,6 +21,7 @@
 #include "Optimizer/Minuit2/MinuitFcn.hpp"
 #include "Optimizer/ControlParameter.hpp"
 
+namespace COMPWA {
 using namespace ROOT::Minuit2;
 
 MinuitFcn::MinuitFcn(std::shared_ptr<ControlParameter> myData, ParameterList& parList) :
@@ -68,5 +69,5 @@ double MinuitFcn::Up() const
 	return 0.5; //TODO: Setter, LH 0.5, Chi2 1.
 }
 
-
+}
 

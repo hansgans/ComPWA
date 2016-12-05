@@ -38,6 +38,7 @@
 #include "Core/Event.hpp"
 #include "Core/ParameterList.hpp"
 
+namespace COMPWA {
 /*class  FitFuncObject {
  public:
    // use constructor to customize your function object
@@ -147,5 +148,5 @@ private:
   double PI; // m/s
 
 };
-
+}
 #endif /* _SLICEFIT_HPP */

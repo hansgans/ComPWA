@@ -18,6 +18,7 @@
 
 
 #include "Core/Event.hpp"
+namespace COMPWA {
 class dataPoint;
 
 static const char * formFactorTypeString[] = {
@@ -223,4 +224,5 @@ protected:
 	double mass_max;//!maximum value of masssq
 
 };
+}
 #endif /* KINEMATICS_HPP_ */

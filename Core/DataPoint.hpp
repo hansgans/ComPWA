@@ -29,6 +29,8 @@
 #include "Core/Efficiency.hpp"
 #include "Core/Event.hpp"
 
+namespace COMPWA {
+
 class dataPoint
 {
 private:
@@ -96,4 +98,5 @@ protected:
 	friend std::ostream & operator<<(std::ostream &os, const dataPoint &p);
 };
 
+}
 #endif /*DPPOINT2_HPP_*/

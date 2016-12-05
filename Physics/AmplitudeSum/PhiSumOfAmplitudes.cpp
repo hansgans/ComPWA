@@ -15,6 +15,7 @@
 
 #include "Physics/AmplitudeSum/PhiSumOfAmplitudes.hpp"
 
+namespace COMPWA {
  PhiSumOfAmplitudes::PhiSumOfAmplitudes(const char *name) : _name(name)
  { 
 //   _pdfIter = _pdfList.createIterator() ;
@@ -82,4 +83,5 @@ double PhiSumOfAmplitudes::evaluate() const
 
    return fabs(3.1416+atan2(res.imag(),res.real()));
  } 
+}
 

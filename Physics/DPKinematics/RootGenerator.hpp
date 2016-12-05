@@ -28,6 +28,7 @@
 #include "Core/Particle.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
+namespace COMPWA {
 class RootGenerator : public Generator {
 protected:
 	TGenPhaseSpace event;
@@ -64,6 +65,6 @@ protected:
 	double minSq, maxSq;
 
 };
-
+}
 #endif /* ROOTGENERATOR_HPP_ */
 

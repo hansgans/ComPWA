@@ -32,6 +32,7 @@
 #include "Core/AbsParameter.hpp"
 #include "Core/Parameter.hpp"
 
+namespace COMPWA {
 class FunctionTree //: public ControlParametr
 {
 public:
@@ -241,5 +242,5 @@ protected:
 	//! Helper function to set all nodes to status changed
 	virtual void UpdateAll(std::shared_ptr<TreeNode> startNode);
 };
-
+}
 #endif /* _FUNCTIONTREE_HPP_ */

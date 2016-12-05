@@ -21,6 +21,7 @@
 #include "qft++.h"
 #include "Physics/AmplitudeSum/AmpGausRes.hpp"
 
+namespace COMPWA {
 AmpGausRes::AmpGausRes(const char *name,
 		unsigned int varIdA,
 		std::shared_ptr<DoubleParameter> mag,
@@ -56,4 +57,6 @@ std::complex<double> AmpGausRes::EvaluateAmp(dataPoint& point){
 }
 std::complex<double> AmpGausRes::Evaluate(dataPoint& point){
 	return EvaluateAmp(point)*evaluateWignerD(point);
+}
+
 }

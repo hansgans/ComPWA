@@ -23,6 +23,7 @@
 #include "Core/Amplitude.hpp"
 #include "Core/ParameterList.hpp"
 
+namespace COMPWA {
 class BreitWigner : public Amplitude {
 
 public:
@@ -69,4 +70,5 @@ private:
 
 };
 
+}
 #endif /* _PIFBW_HPP */

@@ -24,6 +24,8 @@
 
 #include "Core/Dictionary.hpp"
 
+namespace COMPWA {
+
 Dictionary::Dictionary() {
 
 }
@@ -71,5 +73,7 @@ bool Dictionary::amplitudeNameUsed(std::string inName){
     if( it->name == inName) used = true;
 
   return used;
+}
+
 }
 

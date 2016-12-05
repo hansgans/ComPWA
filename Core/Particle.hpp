@@ -26,6 +26,7 @@
 #include <iostream>
 #include <stdexcept>
 
+namespace COMPWA {
 class Particle
 {
 public:
@@ -82,4 +83,5 @@ public:
 	int pid;
 	int charge;
 };
+}
 #endif

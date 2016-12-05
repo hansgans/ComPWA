@@ -30,6 +30,7 @@
 #include "Estimator/Estimator.hpp"
 #include "DataReader/Data.hpp"
 
+namespace COMPWA {
 class ChiOneD : public Estimator {
 
 public:
@@ -48,5 +49,5 @@ private:
   std::shared_ptr<Data> pDIF_;
 
 };
-
+}
 #endif /* _EIFChiOneD_HPP */

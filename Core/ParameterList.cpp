@@ -23,6 +23,7 @@
 #include "Core/ParameterList.hpp"
 #include "Core/Logging.hpp"
 
+namespace COMPWA {
 ParameterList::ParameterList(){
 	//make_str();
 }
@@ -768,4 +769,5 @@ void ParameterList::RemoveMultiComplex(const unsigned int id){
 				"parameter with ID="<<id<<": "<<ex.what();
 		throw;
 	}
+}
 }

@@ -37,6 +37,7 @@
 #include "Optimizer/Minuit2/MinuitFcn.hpp"
 #include "Optimizer/Minuit2/MinuitResult.hpp"
 
+namespace COMPWA {
 using namespace ROOT::Minuit2;
 
 class MinuitIF : public Optimizer
@@ -64,10 +65,10 @@ private:
 	bool enableMinos;
 };
 
-class MinuitStrategy : public MnStrategy
+class MinuitStrategy : public ROOT::Minuit2::MnStrategy
 {
 public:
-	MinuitStrategy(unsigned int i=1) : MnStrategy(i) {
+	MinuitStrategy(unsigned int i=1) : ROOT::Minuit2::MnStrategy(i) {
 		fGradNCyc = GradientNCycles();
 		fGradTlrStp = GradientStepTolerance();
 		fGradTlr = GradientTolerance();
@@ -112,5 +113,5 @@ private:
 #endif
 
 };
-
+}
 #endif /* _OIFMinuit_HPP */

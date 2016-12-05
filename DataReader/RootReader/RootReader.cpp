@@ -25,6 +25,7 @@
 #include "Core/Logging.hpp"
 #include "DataReader/RootReader/RootReader.hpp"
 
+namespace COMPWA {
 
 RootReader::RootReader()
 {
@@ -238,4 +239,4 @@ void RootReader::bin()
 
 }
 
-
+}

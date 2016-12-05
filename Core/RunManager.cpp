@@ -33,6 +33,7 @@
 
 #include "Core/RunManager.hpp"
 
+namespace COMPWA {
 RunManager::RunManager()
 {
 
@@ -313,4 +314,6 @@ bool RunManager::generatePhsp( int number )
 		bar.nextEvent();
 	}
 	return true;
+}
+
 }

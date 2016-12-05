@@ -36,6 +36,7 @@
 #include "Core/AbsParameter.hpp"
 #include "Core/DataPoint.hpp"
 
+namespace COMPWA {
 class Strategy
 {
 public:
@@ -200,5 +201,5 @@ public:
 	virtual bool execute(ParameterList& paras,
 			std::shared_ptr<AbsParameter>& out);
 };
-
+}
 #endif

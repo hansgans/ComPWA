@@ -40,6 +40,7 @@
 #include "TTree.h"
 #include "TRandom3.h"
 
+namespace COMPWA {
 class RootReader : public Data
 {
 public:
@@ -109,5 +110,6 @@ protected:
 	int fFlavour;
 
 };
+}
 
 #endif /* _RootReader_HPP */

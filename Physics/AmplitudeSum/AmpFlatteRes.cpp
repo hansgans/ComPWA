@@ -24,6 +24,7 @@
 #include "Physics/AmplitudeSum/AmpFlatteRes.hpp"
 #include "Physics/AdvancedStrategies.hpp"
 
+namespace COMPWA {
 AmpFlatteRes::AmpFlatteRes( normStyle nS, int calls ) :
 AmpAbsDynamicalFunction( nS, calls )
 {
@@ -710,4 +711,6 @@ bool FlatteStrategy::execute(ParameterList& paras,
 			new MultiComplex(out->GetName(),results)
 	);
 	return true;
+}
+
 }

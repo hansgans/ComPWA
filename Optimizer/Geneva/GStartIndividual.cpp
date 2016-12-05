@@ -38,6 +38,7 @@
 #include "Core/Logging.hpp"
 #include "GStartIndividual.hpp"
 
+namespace COMPWA {
 BOOST_CLASS_EXPORT_IMPLEMENT(Gem::Geneva::GStartIndividual)
 
 namespace Gem
@@ -205,3 +206,4 @@ namespace Gem
 	}
 	} /* namespace Geneva */
 } /* namespace Gem */
+}

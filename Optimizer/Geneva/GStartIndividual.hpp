@@ -59,6 +59,7 @@
 #include <geneva/GParameterSet.hpp>
 #include <geneva/GConstrainedDoubleObject.hpp>
 
+namespace COMPWA {
 namespace Gem
 {
 namespace Geneva
@@ -147,5 +148,5 @@ private:
 } /* namespace Gem */
 
 BOOST_CLASS_EXPORT_KEY(Gem::Geneva::GStartIndividual)
-
+}
 #endif /* GPARABOLOIDINDIVIDUAL2D_HPP_ */

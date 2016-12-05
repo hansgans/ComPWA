@@ -26,6 +26,7 @@
 
 //#define LOCAL  __attribute__ ((visibility ("hidden")))
 
+
 #include <string>
 #include <vector>
 #include <memory>
@@ -42,6 +43,7 @@
 
 #include "Core/ParObserver.hpp"
 
+namespace COMPWA {
 enum ParType { COMPLEX = 1, DOUBLE = 2, INTEGER = 3, BOOL = 4, MDOUBLE = 5, MCOMPLEX = 6, UNDEFINED = 0};
 static const char* ParNames[7] = { "UNDEFINED", "COMPLEX", "DOUBLE", "INTEGER", "BOOL", "MDOUBLE", "MCOMPLEX"};
 
@@ -172,4 +174,5 @@ BOOST_CLASS_TRACKING( AbsParameter, boost::serialization::track_never )
 //BOOST_SERIALIZATION_ASSUME_ABSTRACT(AbsParameter)
 #endif
 
+}
 #endif

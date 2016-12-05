@@ -40,6 +40,8 @@
 #include "Core/Generator.hpp"
 
 
+namespace COMPWA {
+
 class Amplitude
 {
 
@@ -417,5 +419,6 @@ protected:
 	std::shared_ptr<FunctionTree> setupBasicTree(ParameterList& sample,
 			ParameterList& toySample, std::string suffix);
 };
+}
 
 #endif

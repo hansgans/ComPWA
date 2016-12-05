@@ -23,6 +23,7 @@
 #include "Core/Logging.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
+namespace COMPWA {
 DalitzKinematics::DalitzKinematics(std::string _nameMother,
 		std::string _name1, std::string _name2, std::string _name3) :
 		name1(_name1), name2(_name2), name3(_name3), massIdsSet(false),
@@ -556,4 +557,6 @@ bool DalitzKinematics::IsWithinBoxPhsp(int idA, int idB,
 		return 0;
 
 	return 1;
+}
+
 }

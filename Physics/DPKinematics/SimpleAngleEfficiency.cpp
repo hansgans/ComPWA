@@ -17,6 +17,7 @@
 #include "Physics/DPKinematics/SimpleAngleEfficiency.hpp"
 
 
+namespace COMPWA {
 //SimpleAngleEfficiency::SimpleAngleEfficiency(SimpleEfficiency* eff) : effHist(new SimpleEfficiency(*eff)){
 SimpleAngleEfficiency::SimpleAngleEfficiency(SimpleEfficiency* eff) {
 	effHist = std::shared_ptr<SimpleEfficiency>(new SimpleEfficiency(*eff));
@@ -47,4 +48,6 @@ double SimpleAngleEfficiency::evaluate(dataPoint& point){
 	double eff = effHist->GetEfficiency(globalBin);
 //	std::cout<<globalBin<<" m="<<m23sq<<" theta="<<angle<<" ->"<<eff<<std::endl;
 	return eff;
+}
+
 }
