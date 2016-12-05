@@ -21,6 +21,7 @@
 #include "Core/Exceptions.hpp"
 
 #include "Core/ParameterList.hpp"
+#include "Core/Logging.hpp"
 
 ParameterList::ParameterList(){
 	//make_str();

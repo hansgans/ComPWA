@@ -23,8 +23,6 @@
 #include <vector>
 #include <memory>
 
-#include "qft++.h"
-
 #include "Core/ParameterList.hpp"
 #include "Core/Functions.hpp"
 #include "Core/DataPoint.hpp"

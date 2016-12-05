@@ -137,7 +137,7 @@ public:
 	static std::shared_ptr<FunctionTree> SetupTree(
 			std::shared_ptr<MultiDouble> mSq,
 			std::shared_ptr<DoubleParameter> mR, double ma, double mb,
-			Spin spin, std::shared_ptr<DoubleParameter> mesonRadius,
+			int spin, std::shared_ptr<DoubleParameter> mesonRadius,
 			formFactorType type){
 
 		std::shared_ptr<barrierStrat> thisStrat( new barrierStrat );

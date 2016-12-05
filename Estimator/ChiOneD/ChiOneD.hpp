@@ -24,11 +24,11 @@
 #include <string>
 
 //PWA-Headers
-#include "Estimator/Estimator.hpp"
 #include "Core/Amplitude.hpp"
-#include "DataReader/Data.hpp"
 #include "Core/Event.hpp"
 #include "Core/ParameterList.hpp"
+#include "Estimator/Estimator.hpp"
+#include "DataReader/Data.hpp"
 
 class ChiOneD : public Estimator {
 

@@ -43,11 +43,15 @@
 #include <limits>
 #include <memory>
 
+#include <boost/program_options.hpp>
+#include <boost/filesystem.hpp>
+
 // Geneva header files go here
-#include "geneva/Go2.hpp"
+#include <geneva/Go2.hpp>
 #include <geneva/GEvolutionaryAlgorithmFactory.hpp>
 
 // ComPWA header files go here
+#include "Core/Logging.hpp"
 #include "Optimizer/Geneva/GenevaIF.hpp"
 #include "Optimizer/Geneva/GenevaResult.hpp"
 

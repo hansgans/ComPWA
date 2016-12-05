@@ -24,6 +24,7 @@
 #include "Core/FunctionTree.hpp"
 #include "Core/Kinematics.hpp"
 #include "Core/FitResult.hpp"
+#include "Core/Logging.hpp"
 
 MinLogLH::MinLogLH(std::shared_ptr<Amplitude> amp, std::shared_ptr<Data> data,
 		std::shared_ptr<Data> phspSample,std::shared_ptr<Data> accSample,

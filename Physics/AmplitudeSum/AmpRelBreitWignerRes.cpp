@@ -19,14 +19,15 @@
 // includes the use of Blatt-Weisskopf barrier factors.
 
 #include <cmath>
-#include "Physics/AmplitudeSum/AmpRelBreitWignerRes.hpp"
 #include <stdlib.h>
+#include "Core/Logging.hpp"
+#include "Physics/AmplitudeSum/AmpRelBreitWignerRes.hpp"
 
 AmpRelBreitWignerRes::AmpRelBreitWignerRes(const char *name,
 		unsigned int varIdA, unsigned int varIdB,
 		std::shared_ptr<DoubleParameter> mag, std::shared_ptr<DoubleParameter> phase,
 		std::shared_ptr<DoubleParameter> mass,
-		Spin spin, Spin m, Spin n, int P, int C,
+		int spin, int m, int n, int P, int C,
 		std::string mother, std::string particleA, std::string particleB,
 		std::shared_ptr<DoubleParameter> width,
 		std::shared_ptr<DoubleParameter> mesonRadius,

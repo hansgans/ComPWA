@@ -24,10 +24,11 @@
 #include "Minuit2/MnPrint.h"
 #include "Minuit2/MinosError.h"
 
-#include "Optimizer/Minuit2/MinuitIF.hpp"
 #include "Core/ParameterList.hpp"
 #include "Core/Parameter.hpp"
 #include "Core/FitResult.hpp"
+#include "Core/Logging.hpp"
+#include "Optimizer/Minuit2/MinuitIF.hpp"
 
 double shiftAngle(double v)
 {
@@ -93,6 +94,7 @@ std::shared_ptr<FitResult> MinuitIF::exec(ParameterList& par)
 	MinuitStrategy strat;//using default strategy = 1
 
 	//read in xml configuration file for strategy settings
+#ifdef USESERIALIZATION
 	const char* pPath = getenv("COMPWA_DIR");
 	std::string path = std::string(pPath);
 	std::ifstream ifs(path+"/Optimizer/Minuit2/MinuitStrategy.xml");
@@ -100,14 +102,12 @@ std::shared_ptr<FitResult> MinuitIF::exec(ParameterList& par)
 	ia >> BOOST_SERIALIZATION_NVP(strat);
 	strat.init();//update parameters of MnStrategy mother class (IMPORTANT!)
 	ifs.close();
-	//write strategy settings
-	//	std::ofstream ofs(path+"Optimizer/Minuit2/test.xml");
-	//	boost::archive::xml_oarchive oa(ofs,boost::archive::no_header);
-	//	oa << BOOST_SERIALIZATION_NVP(strat);
-	//	ofs.close();
-
 	BOOST_LOG_TRIVIAL(debug) << "Minuit strategy parameters: (from "<<
 			path+"Optimizer/Minuit2/MinuitStrategy.xml"<<")";
+#else
+	BOOST_LOG_TRIVIAL(debug) << "Minuit strategy parameters: default";
+#endif
+
 	BOOST_LOG_TRIVIAL(debug) << "Gradient number of steps: "
 			<<strat.GradientNCycles();
 	BOOST_LOG_TRIVIAL(debug) << "Gradient step tolerance: "

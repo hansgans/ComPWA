@@ -10,12 +10,17 @@
 //-------------------------------------------------------------------------------
 
 #include <stdlib.h>
+
+#include <boost/property_tree/ptree.hpp>
+
 #include "gsl/gsl_monte.h"
 #include "gsl/gsl_monte_plain.h"
 #include "gsl/gsl_monte_miser.h"
 #include "gsl/gsl_monte_vegas.h"
 
+#include "qft++.h"
 #include "Core/PhysConst.hpp"
+#include "Core/Logging.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 #include "Physics/AdvancedStrategies.hpp"
@@ -34,7 +39,7 @@ AmpAbsDynamicalFunction::AmpAbsDynamicalFunction(const char *name,
 		std::shared_ptr<DoubleParameter> mag,
 		std::shared_ptr<DoubleParameter> phase,
 		std::shared_ptr<DoubleParameter> mass,
-		Spin spin, Spin m, Spin n, int P, int C,
+		int spin, int m, int n, int P, int C,
 		std::string mother, std::string particleA, std::string particleB,
 		std::shared_ptr<DoubleParameter> mesonR, //  meson radius
 		std::shared_ptr<DoubleParameter> motherR, //  mother radius
@@ -55,7 +60,7 @@ AmpAbsDynamicalFunction::AmpAbsDynamicalFunction(const char *name,
 		std::shared_ptr<DoubleParameter> mag,
 		std::shared_ptr<DoubleParameter> phase,
 		std::shared_ptr<DoubleParameter> mass,
-		Spin spin, Spin m, Spin n, int P, int C,
+		int spin, int m, int n, int P, int C,
 		std::string mother, std::string particleA, std::string particleB,
 		formFactorType type,
 		int nCalls, normStyle nS) :
@@ -319,11 +324,11 @@ void AmpAbsDynamicalFunction::Configure(
 		}
 	}
 
-	auto tmp_spin = pt.get_optional<int>("Spin");
+	auto tmp_spin = pt.get_optional<int>("int");
 	if(!tmp_spin)
 		throw BadParameter("AmpAbsDynamicalFunction::Configure() | "
-				"Spin for "+_name+" not specified!");
-	_spin = Spin(tmp_spin.get());
+				"int for "+_name+" not specified!");
+	_spin = int(tmp_spin.get());
 
 	auto tmp_parity = pt.get_optional<int>("Parity");
 	if(!tmp_parity)
@@ -348,9 +353,9 @@ void AmpAbsDynamicalFunction::Configure(
 
 	//optional parameters
 	double tmp_m = pt.get<int>("m",0);
-	_m = Spin(tmp_m);
+	_m = int(tmp_m);
 	double tmp_n = pt.get<int>("n",0);
-	_n = Spin(tmp_n);
+	_n = int(tmp_n);
 
 	auto tmp_varIdA = pt.get_optional<int>("varIdA");
 	if(!tmp_varIdA)
@@ -429,7 +434,7 @@ void AmpAbsDynamicalFunction::put(boost::property_tree::ptree &pt)
 		pt.put("mesonRadius_min", _mesonRadius->GetMinValue());
 		pt.put("mesonRadius_max", _mesonRadius->GetMaxValue());
 	}
-	pt.put("Spin", _spin);
+	pt.put("int", _spin);
 	pt.put("Parity", _parity);
 	if( _cparity )
 		pt.put("Cparity", _cparity);
@@ -832,7 +837,7 @@ std::shared_ptr<FunctionTree> couplingToWidthStrat::SetupTree(
 			std::shared_ptr<MultiDouble> mSq,
 			std::shared_ptr<DoubleParameter> mR,
 			std::shared_ptr<DoubleParameter> g, double ma, double mb,
-			Spin spin, std::shared_ptr<DoubleParameter> mesonRadius,
+			int spin, std::shared_ptr<DoubleParameter> mesonRadius,
 			formFactorType type)
 {
 

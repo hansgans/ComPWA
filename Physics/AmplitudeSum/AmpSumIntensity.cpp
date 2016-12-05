@@ -11,21 +11,21 @@
 //-------------------------------------------------------------------------------
 #include <numeric>
 
-#include "Core/PhysConst.hpp"
-#include "Core/Functions.hpp"
-
 // Boost header files go here
 #include <boost/foreach.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 
+#include "gsl/gsl_monte_vegas.h"
+
+#include "Core/PhysConst.hpp"
+#include "Core/Functions.hpp"
+#include "Core/Logging.hpp"
 #include "Physics/AmplitudeSum/NonResonant.hpp"
 #include "Physics/AmplitudeSum/AmpRelBreitWignerRes.hpp"
 #include "Physics/AmplitudeSum/AmpGausRes.hpp"
 #include "Physics/AmplitudeSum/AmpFlatteRes.hpp"
 #include "Physics/AmplitudeSum/AmpWigner2.hpp"
-
-#include "gsl/gsl_monte_vegas.h"
 
 #include "Physics/AmplitudeSum/AmpSumIntensity.hpp"
 
@@ -120,9 +120,11 @@ AmpSumIntensity& AmpSumIntensity::operator+=(const AmpSumIntensity& rhs) {
 //===================== LOAD/SAVE CONFIG ===================
 //==========================================================
 //! Configure resonance from ptree
-void AmpSumIntensity::Configure(const boost::property_tree::ptree &pt)
+void AmpSumIntensity::Configure(std::string filePath)
 {
-	BOOST_FOREACH( ptree::value_type const& v,
+	boost::property_tree::ptree pt;
+	read_xml(filePath, pt, boost::property_tree::xml_parser::trim_whitespace);
+	BOOST_FOREACH( boost::property_tree::ptree::value_type const& v,
 			pt.get_child("amplitude_setup") ) {
 		/* We try to configure each type of resonance. In case that v.first does
 		 * not contain the correct string, a BadConfig is thrown. We catch it

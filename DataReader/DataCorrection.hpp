@@ -8,11 +8,10 @@
 #ifndef DATAREADER_DATACORRECTION_HPP_
 #define DATAREADER_DATACORRECTION_HPP_
 
-#include "Core/Event.hpp"
-#include "Core/Logging.hpp"
-#include "DataReader/CorrectionTable.hpp"
 #include <stdexcept>
 #include <cfloat>
+#include "Core/Event.hpp"
+#include "DataReader/CorrectionTable.hpp"
 
 class DataCorrection
 {
@@ -26,9 +25,7 @@ class UnitCorrection : public DataCorrection
 {
 	virtual ~UnitCorrection() { }
 	virtual double getCorrection(Event& ev) { return 1; }
-	virtual void Print() const {
-		BOOST_LOG_TRIVIAL(info) << "UnitCorrection::Print() | correction factors are set to one";
-	}
+	virtual void Print() const;
 };
 
 class MomentumCorrection : public DataCorrection

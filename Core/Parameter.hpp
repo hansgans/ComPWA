@@ -32,7 +32,6 @@
 
 #include "Core/AbsParameter.hpp"
 #include "Core/Exceptions.hpp"
-#include "Core/Logging.hpp"
 
 enum ErrorType { SYM = 1, ASYM = 2, LHSCAN = 3, NOTDEF = 0};
 
@@ -799,11 +798,6 @@ public:
 		if(!HasError())
 			throw std::runtime_error("DoubleParameter::GetError() | "
 					"Parameter "+name_+" has no errors defined!");
-		//		if(GetErrorType()==ErrorType::SYM){
-		//			BOOST_LOG_TRIVIAL(info) << "DoubleParameter::GetErrorHigh() | Parameter "<<name_
-		//					<<" has no asymmetric errors! Returning symmetric error";
-		//			return GetError();
-		//		}
 		return errorHigh;
 	}
 	//! Getter for lower error of parameter
@@ -812,11 +806,6 @@ public:
 		if(!HasError())
 			throw std::runtime_error("DoubleParameter::GetError() | "
 					"Parameter "+name_+" has no errors defined!");
-		//		if(GetErrorType()==ErrorType::SYM){
-		//			BOOST_LOG_TRIVIAL(info) << "DoubleParameter::GetErrorHigh() | Parameter "<<name_
-		//					<<" has no assymetric errors! Returning symmetric error";
-		//			return GetError();
-		//		}
 		if(!HasError())
 			throw std::runtime_error("DoubleParameter::GetError() | "
 					"Parameter "+name_+" has no errors defined!");
@@ -916,6 +905,7 @@ protected:
 	}
 
 private:
+#ifdef USESERIALIZATION
 	friend class boost::serialization::access;
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)
@@ -939,7 +929,11 @@ private:
 			errorType = ErrorType::SYM;
 		}
 	}
+#endif
+
 };
+
+#ifdef USESERIALIZATION
 BOOST_SERIALIZATION_SHARED_PTR(DoubleParameter)
 BOOST_CLASS_IMPLEMENTATION( DoubleParameter, boost::serialization::object_serializable )
 BOOST_CLASS_TRACKING( DoubleParameter, boost::serialization::track_never )
@@ -947,6 +941,7 @@ BOOST_CLASS_IMPLEMENTATION( std::shared_ptr<DoubleParameter>, boost::serializati
 BOOST_CLASS_TRACKING( std::shared_ptr<DoubleParameter>, boost::serialization::track_never )
 BOOST_CLASS_IMPLEMENTATION( std::vector<std::shared_ptr<DoubleParameter> >, boost::serialization::object_serializable )
 BOOST_CLASS_TRACKING( std::vector<std::shared_ptr<DoubleParameter> >, boost::serialization::track_never )
+#endif
 
 
 class IntegerParameter : public AbsParameter

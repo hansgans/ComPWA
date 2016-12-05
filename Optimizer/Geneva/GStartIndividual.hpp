@@ -42,8 +42,6 @@
 // Includes check for correct Boost version(s)
 #include <common/GGlobalDefines.hpp>
 
-// Boost header files go here
-#include <boost/shared_ptr.hpp>
 
 #ifndef GPARABOLOIDINDIVIDUAL2D_HPP_
 #define GPARABOLOIDINDIVIDUAL2D_HPP_

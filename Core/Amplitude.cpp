@@ -5,6 +5,7 @@
  *      Author: weidenka
  */
 
+#include "Core/Logging.hpp"
 #include "Core/Amplitude.hpp"
 
 void Amplitude::UpdateParameters(ParameterList& par)
@@ -123,4 +124,47 @@ void Amplitude::GetAmpFitFractions(
 	}
 
 	return;
+}
+
+std::shared_ptr<FunctionTree> UnitAmp::setupBasicTree(ParameterList& sample,
+		ParameterList& toySample, std::string suffix) {
+
+	int sampleSize = sample.GetMultiDouble(0)->GetNValues();
+	int toySampleSize = toySample.GetMultiDouble(0)->GetNValues();
+
+	BOOST_LOG_TRIVIAL(debug) << "UnitAmp::setupBasicTree() generating new tree!";
+	if(sampleSize==0){
+		BOOST_LOG_TRIVIAL(error) << "UnitAmp::setupBasicTree() data sample empty!";
+		return std::shared_ptr<FunctionTree>();
+	}
+	std::shared_ptr<FunctionTree> newTree(new FunctionTree());
+	//std::shared_ptr<MultAll> mmultDStrat(new MultAll(ParType::MDOUBLE));
+
+	std::vector<double> oneVec(sampleSize, 1.0);
+	std::shared_ptr<AbsParameter> one(new MultiDouble("one",oneVec));
+	newTree->createHead("Amplitude"+suffix, one);
+	std::cout<<newTree->head()->to_str(10)<<std::endl;
+	return newTree;
+}
+
+const ParameterList& GaussAmp::intensity(dataPoint& point) {
+	double mass = params.GetDoubleParameter(0)->GetValue();
+	double width = params.GetDoubleParameter(1)->GetValue();
+	double sqrtS = std::sqrt(point.getVal(0));
+
+	std::complex<double> gaus(
+			std::exp(-1*(sqrtS-mass)*(sqrtS-mass)/width/width/2.),
+			0
+	);
+
+	if(gaus.real() != gaus.real())
+		BOOST_LOG_TRIVIAL(error)<<"GaussAmp::intensity() | result NaN!";
+	result.SetParameterValue(0,std::norm(gaus));
+	return result;
+}
+
+const double UnitAmp::GetNormalization() {
+	BOOST_LOG_TRIVIAL(info) << "UnitAmp::normalization() | "
+			"normalization not implemented!";
+	return 1;
 }

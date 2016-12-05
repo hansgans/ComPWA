@@ -47,7 +47,7 @@ public:
 			std::shared_ptr<DoubleParameter> mag,
 			std::shared_ptr<DoubleParameter> phase,
 			std::shared_ptr<DoubleParameter> mass,
-			Spin spin, Spin m, Spin n, int P, int C,
+			int spin, int m, int n, int P, int C,
 			std::string mother, std::string particleA, std::string particleB,
 			std::shared_ptr<DoubleParameter> mesonR, //  meson radius
 			std::shared_ptr<DoubleParameter> motherR, //  mother radius
@@ -59,7 +59,7 @@ public:
 			std::shared_ptr<DoubleParameter> mag,
 			std::shared_ptr<DoubleParameter> phase,
 			std::shared_ptr<DoubleParameter> mass,
-			Spin spin, Spin m, Spin n, int P, int C,
+			int spin, int m, int n, int P, int C,
 			std::string mother, std::string particleA, std::string particleB,
 			formFactorType type = formFactorType::BlattWeisskopf,
 			int nCalls=30000, normStyle nS=normStyle::one);
@@ -191,7 +191,7 @@ public:
 	 * @param g coupling to channel [a,b]
 	 * @param ma mass of particle a
 	 * @param mb mass of particle b
-	 * @param spin Spin of resonance
+	 * @param spin int of resonance
 	 * @param mesonRadius Meson radius of resonance
 	 * @param type Type of barrier factor
 	 * @return
@@ -210,7 +210,7 @@ public:
 	 * @param g coupling to channel [a,b]
 	 * @param ma mass of particle a
 	 * @param mb mass of particle b
-	 * @param spin Spin of resonance
+	 * @param spin int of resonance
 	 * @param mesonRadius Meson radius of resonance
 	 * @param type Type of barrier factor
 	 * @param phspFactor Phase-space factor
@@ -290,7 +290,7 @@ protected:
 	unsigned int _subSys;
 
 	//! Resonance spin
-	Spin _spin, _m, _n;
+	int _spin, _m, _n;
 	//! Parity of resonance +-
 	int _parity;
 	//! Charge parity of resonance +-0
@@ -315,7 +315,7 @@ public:
 			std::shared_ptr<MultiDouble> mSq,
 			std::shared_ptr<DoubleParameter> mR,
 			std::shared_ptr<DoubleParameter> g, double ma, double mb,
-			Spin spin, std::shared_ptr<DoubleParameter> mesonRadius,
+			int spin, std::shared_ptr<DoubleParameter> mesonRadius,
 			formFactorType type);
 
 	virtual bool execute(ParameterList& paras,

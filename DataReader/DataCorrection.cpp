@@ -7,6 +7,7 @@
 
 
 #include "Core/Kinematics.hpp"
+#include "Core/Logging.hpp"
 #include "DataReader/DataCorrection.hpp"
 
 MomentumCorrection::MomentumCorrection(std::vector<CorrectionTable> inCorr, std::string t) :
@@ -39,4 +40,8 @@ void MomentumCorrection::Print() const{
 	for(int i=0; i < corrections.size(); i++)
 		corrections.at(i).Print();
 	return;
+}
+
+void UnitCorrection::Print() const {
+	BOOST_LOG_TRIVIAL(info) << "UnitCorrection::Print() | correction factors are set to one";
 }

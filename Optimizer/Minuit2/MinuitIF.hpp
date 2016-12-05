@@ -23,13 +23,13 @@
 #include <memory>
 #include <fstream>
 
+#ifdef USESERIALIZATION
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/map.hpp>
 #include <boost/archive/xml_oarchive.hpp>
 #include <boost/archive/xml_iarchive.hpp>
 #include <boost/serialization/nvp.hpp>
-
-#include "Minuit2/MnStrategy.h"
+#endif
 
 #include "Core/ParameterList.hpp"
 #include "Optimizer/Optimizer.hpp"
@@ -95,6 +95,7 @@ private:
 	double fHessTlrG2;
 	unsigned int fHessGradNCyc;
 
+#ifdef USESERIALIZATION
 	friend class boost::serialization::access;
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)
@@ -108,6 +109,8 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(fHessTlrG2);
 		ar & BOOST_SERIALIZATION_NVP(fHessGradNCyc);
 	}
+#endif
+
 };
 
 #endif /* _OIFMinuit_HPP */

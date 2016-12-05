@@ -14,12 +14,12 @@
 #include <vector>
 #include <memory>
 
-#include <memory>
-
 #include "TEfficiency.h"
 #include "TH2.h"
-#include "Physics/DPKinematics/DalitzKinematics.hpp"
+
 #include "Core/Efficiency.hpp"
+#include "Physics/DPKinematics/DalitzKinematics.hpp"
+
 /**
  *  \class DalitzHistEfficiency
  *  \brief Efficiency provided by a histogram

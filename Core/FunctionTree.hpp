@@ -27,7 +27,6 @@
 #include <string>
 #include <map>
 
-#include "Core/Logging.hpp"
 #include "Core/Functions.hpp"
 #include "Core/TreeNode.hpp"
 #include "Core/AbsParameter.hpp"

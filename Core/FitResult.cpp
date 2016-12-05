@@ -4,6 +4,8 @@
  *  Created on: Jan 15, 2014
  *      Author: weidenka
  */
+
+#include "Core/Logging.hpp"
 #include "Core/FitResult.hpp"
 
 void FitResult::writeText(std::string filename){

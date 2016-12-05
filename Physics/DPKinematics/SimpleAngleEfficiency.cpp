@@ -12,6 +12,7 @@
 
 #include "Core/DataPoint.hpp"
 #include "Core/Exceptions.hpp"
+#include "Core/Logging.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 #include "Physics/DPKinematics/SimpleAngleEfficiency.hpp"
 

@@ -18,6 +18,7 @@
 // includes the use of Blatt-Weisskopf barrier factors.
 
 #include <cmath>
+#include "qft++.h"
 #include "Physics/AmplitudeSum/AmpGausRes.hpp"
 
 AmpGausRes::AmpGausRes(const char *name,

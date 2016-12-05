@@ -13,6 +13,7 @@
 #include "Core/Exceptions.hpp"
 #include "Core/Kinematics.hpp"
 #include "Core/DataPoint.hpp"
+#include "Core/Logging.hpp"
 
 void dataPoint::init()
 {

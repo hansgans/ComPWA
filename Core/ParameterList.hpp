@@ -27,14 +27,17 @@
 #include <sstream>
 #include <vector>
 #include <map>
+#include <typeinfo>
 
-#include "boost/serialization/vector.hpp"
+#ifdef USESERIALIZATION
+#include <boost/serialization/vector.hpp>
+#include <boost/serialization/split_free.hpp>
+#include <boost/unordered_map.hpp>
+#endif
 
 #include "Core/AbsParameter.hpp"
 #include "Core/Parameter.hpp"
 #include "Core/Exceptions.hpp"
-#include "Core/Logging.hpp"
-
 
 class ParameterList
 {
@@ -668,6 +671,7 @@ protected:
 	friend std::ostream & operator<<(std::ostream &os, ParameterList &p);
 
 private:
+#ifdef USESERIALIZATION
 	friend class boost::serialization::access;
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)
@@ -676,17 +680,19 @@ private:
 		ar & make_nvp("DoubleParameters",vDouble_); //currently only DoubleParameters can be serialized
 		ar & make_nvp("OutString",out_);
 	}
+#endif
+
 };
+
+#ifdef USESERIALIZATION
 BOOST_SERIALIZATION_SHARED_PTR(ParameterList)
 BOOST_CLASS_IMPLEMENTATION( ParameterList, boost::serialization::object_serializable )
 BOOST_CLASS_TRACKING( ParameterList, boost::serialization::track_never )
-
-#include <boost/serialization/split_free.hpp>
-#include <boost/unordered_map.hpp>
-#include <typeinfo>
+#endif
 
 //---/ Wrapper for std::shared_ptr<> /------------------------------------------
 
+#ifdef USESERIALIZATION
 namespace boost {
 	namespace serialization {
 
@@ -723,6 +729,7 @@ namespace boost {
 
 	}//ns:serialization
 }//ns:boost
+#endif
 
 
 #endif

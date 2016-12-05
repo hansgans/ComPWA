@@ -29,20 +29,19 @@
 #include <iostream>
 #include <fstream>
 #include <memory>
-#include <boost/numeric/ublas/symmetric.hpp>
-#include <boost/numeric/ublas/io.hpp>
+
+#ifdef USESERIALIZATION
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/nvp.hpp>
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/assume_abstract.hpp>
 #include <boost/serialization/export.hpp>
+#endif
 
 #include "Core/Amplitude.hpp"
 #include "Core/ParameterList.hpp"
 #include "Core/TableFormater.hpp"
 #include "Core/PhysConst.hpp"
-using namespace boost::log;
-
 
 class FitResult
 {
@@ -156,6 +155,8 @@ protected:
 
 
 private:
+
+#ifdef USESERIALIZATION
 	friend class boost::serialization::access;
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)
@@ -169,7 +170,12 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(sumFractionsError);
 		ar & BOOST_SERIALIZATION_NVP(nSetsFractionError);
 	}
+#endif
+
 };
+
+#ifdef USESERIALIZATION
 BOOST_SERIALIZATION_ASSUME_ABSTRACT( FitResult );
+#endif
 
 #endif

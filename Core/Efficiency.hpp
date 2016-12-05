@@ -13,7 +13,6 @@
 
 #include <iostream>
 #include <vector>
-#include "Core/Logging.hpp"
 
 class dataPoint;
 
@@ -40,9 +39,7 @@ public:
 class UnitEfficiency : public Efficiency {
 private:
 public:
-	UnitEfficiency(){
-		BOOST_LOG_TRIVIAL(info)<<"Efficiency: creating UnitEfficiency!";
-	};
+	UnitEfficiency();
 	~UnitEfficiency(){};
 	virtual double evaluate(std::vector<double> x) {return 1;};
 	virtual double evaluate(dataPoint& point) {return 1;};

@@ -32,6 +32,10 @@
  * http://www.gemfony.com .
  */
 
+// Boost header files go here
+#include <boost/shared_ptr.hpp>
+
+#include "Core/Logging.hpp"
 #include "GStartIndividual.hpp"
 
 BOOST_CLASS_EXPORT_IMPLEMENT(Gem::Geneva::GStartIndividual)

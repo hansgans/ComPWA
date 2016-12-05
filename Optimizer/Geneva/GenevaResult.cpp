@@ -1,5 +1,9 @@
-#include "Optimizer/Geneva/GenevaResult.hpp"
+#include <boost/numeric/ublas/symmetric.hpp>
+#include <boost/numeric/ublas/io.hpp>
+#include <boost/shared_ptr.hpp>
+
 #include "Core/Logging.hpp"
+#include "Optimizer/Geneva/GenevaResult.hpp"
 
 void GenevaResult::init(boost::shared_ptr<Gem::Geneva::GStartIndividual> min){
 	finalLH = min->getBestKnownFitness();

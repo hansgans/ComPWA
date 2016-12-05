@@ -13,8 +13,6 @@
 #include "Core/Parameter.hpp"
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 
-using boost::property_tree::ptree;
-
 class NonResonant : public AmpAbsDynamicalFunction
 {
 public:
@@ -43,6 +41,7 @@ public:
 	virtual void Save(boost::property_tree::ptree &pt);
 	//! Get resonance width
 	virtual double GetWidth() const { return 0; }
+
 	//! value of dynamical amplitude at \param point
 	virtual std::complex<double> EvaluateAmp(dataPoint& point) {
 		return dynamicalFunction();

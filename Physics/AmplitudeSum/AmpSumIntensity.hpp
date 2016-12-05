@@ -18,8 +18,6 @@
 #include <map>
 #include <string>
 
-#include <boost/property_tree/xml_parser.hpp>
-
 #include "Core/Amplitude.hpp"
 #include "Core/Resonance.hpp"
 #include "Core/Parameter.hpp"
@@ -28,7 +26,6 @@
 #include "Core/Efficiency.hpp"
 #include "Core/DataPoint.hpp"
 #include "Core/Generator.hpp"
-
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
@@ -66,7 +63,8 @@ public:
 
 	//===================== LOAD/SAVE CONFIG ====================
 	//! Configure resonance from ptree
-	virtual void Configure(const boost::property_tree::ptree &pt);
+//	virtual void Configure(const boost::property_tree::ptree &pt);
+	virtual void Configure(std::string filePath);
 
 	//! Save resonance from to ptree
 	virtual void Save(std::string fileName);

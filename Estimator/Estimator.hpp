@@ -28,10 +28,10 @@
 #include <vector>
 #include <memory>
 
-#include "Optimizer/ControlParameter.hpp"
 #include "Core/ParameterList.hpp"
 #include "Core/FunctionTree.hpp"
 #include "Core/Amplitude.hpp"
+#include "Optimizer/ControlParameter.hpp"
 
 class Estimator : public ControlParameter
 {

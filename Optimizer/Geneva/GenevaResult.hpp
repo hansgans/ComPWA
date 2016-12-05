@@ -26,9 +26,6 @@
 #include <iostream>
 #include <fstream>
 #include <memory>
-#include <boost/numeric/ublas/symmetric.hpp>
-#include <boost/numeric/ublas/io.hpp>
-#include <boost/shared_ptr.hpp>
 
 #include "Core/ParameterList.hpp"
 #include "Core/TableFormater.hpp"

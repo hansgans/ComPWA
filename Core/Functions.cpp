@@ -5,6 +5,7 @@
  *      Author: weidenka
  */
 
+#include "Core/Logging.hpp"
 #include "Core/Functions.hpp"
 
 bool Inverse::execute(ParameterList& paras,

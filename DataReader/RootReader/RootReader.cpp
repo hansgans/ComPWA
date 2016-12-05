@@ -16,11 +16,15 @@
 #include <memory>
 #include <vector>
 #include <utility>
-#include "DataReader/RootReader/RootReader.hpp"
-#include "Core/Kinematics.hpp"
-#include "Core/Generator.hpp"
+
 #include "TParticle.h"
 #include "TParticlePDG.h"
+
+#include "Core/Kinematics.hpp"
+#include "Core/Generator.hpp"
+#include "Core/Logging.hpp"
+#include "DataReader/RootReader/RootReader.hpp"
+
 
 RootReader::RootReader()
 {

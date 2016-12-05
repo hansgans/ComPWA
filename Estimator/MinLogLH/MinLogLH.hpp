@@ -26,12 +26,12 @@
 #include <string>
 
 //PWA-Header
-#include "Estimator/Estimator.hpp"
 #include "Core/Amplitude.hpp"
-#include "DataReader/Data.hpp"
 #include "Core/Event.hpp"
 #include "Core/ParameterList.hpp"
 #include "Core/FunctionTree.hpp"
+#include "DataReader/Data.hpp"
+#include "Estimator/Estimator.hpp"
 
 class MinLogLH : public Estimator {
 

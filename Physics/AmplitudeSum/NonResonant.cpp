@@ -5,6 +5,8 @@
  *      Author: weidenka
  */
 
+#include "qft++.h"
+#include "Core/Logging.hpp"
 #include "Physics/AmplitudeSum/NonResonant.hpp"
 
 
@@ -15,7 +17,7 @@ NonResonant::NonResonant(const char *name,
 		int nCalls, normStyle nS) :
 		AmpAbsDynamicalFunction(name, 0, 0, mag, phase,
 				std::make_shared<DoubleParameter>("mass", 0.0),
-				Spin(0), Spin(0), Spin(0), +1, 0, mother, particleA, particleB,
+				int(0), int(0), int(0), +1, 0, mother, particleA, particleB,
 				formFactorType::noFormFactor, nCalls, nS)
 {
 }

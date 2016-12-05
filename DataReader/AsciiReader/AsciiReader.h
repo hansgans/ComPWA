@@ -26,10 +26,10 @@
 #include <string>
 
 // local headers
-#include "DataReader/Data.hpp"
 #include "Core/Event.hpp"
 #include "Core/ParameterList.hpp"
 #include "Core/DataPoint.hpp"
+#include "DataReader/Data.hpp"
 
 //_____ D E F I N I T I O N S __________________________________________________
 

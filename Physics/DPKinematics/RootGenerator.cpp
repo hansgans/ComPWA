@@ -5,8 +5,9 @@
  *      Author: weidenka
  */
 
-#include "Physics/DPKinematics/RootGenerator.hpp"
 #include "Core/DataPoint.hpp"
+#include "Core/Logging.hpp"
+#include "Physics/DPKinematics/RootGenerator.hpp"
 
 
 RootGenerator::RootGenerator(int seed){

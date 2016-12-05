@@ -17,6 +17,7 @@
 
 #include "Core/TreeNode.hpp"
 #include "Core/Functions.hpp"
+#include "Core/Logging.hpp"
 
 TreeNode::TreeNode(std::string name, std::shared_ptr<AbsParameter> intResult, std::shared_ptr<Strategy> strat, std::shared_ptr<TreeNode> parent)
 :_name(name),_changed(true),_strat(strat){

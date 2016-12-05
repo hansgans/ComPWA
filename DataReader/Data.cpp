@@ -1,4 +1,7 @@
+
+#include "Core/Logging.hpp"
 #include "DataReader/Data.hpp"
+
 Data::Data(bool binning, unsigned int maxBins,double maxW) :
 fBinned(binning), fmaxBins(maxBins), maxWeight(maxW)
 {

@@ -16,11 +16,14 @@
 
 #ifndef SIMPLEANGLEEFFICIENCY_HPP_
 #define SIMPLEANGLEEFFICIENCY_HPP_
-#include "Core/Efficiency.hpp"
-#include "Physics/DPKinematics/SimpleEfficiency.hpp"
-#include "TH1.h"
+
 #include <vector>
 #include <memory>
+
+#include "TH1.h"
+
+#include "Core/Efficiency.hpp"
+#include "Physics/DPKinematics/SimpleEfficiency.hpp"
 
 class SimpleAngleEfficiency : public Efficiency {
 

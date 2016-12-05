@@ -5,6 +5,7 @@
  *      Author: weidenka
  */
 
+#include "Core/Logging.hpp"
 #include "Core/FunctionTree.hpp"
 
 void FunctionTree::insertTree(std::shared_ptr<FunctionTree> inTree,

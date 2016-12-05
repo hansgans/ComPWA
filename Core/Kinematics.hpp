@@ -16,7 +16,6 @@
 #include <memory>
 #include <complex>
 
-#include "Core/Logging.hpp"
 
 #include "Core/Event.hpp"
 class dataPoint;

@@ -14,10 +14,12 @@
 //****************************************************************************
 
 #include <cmath>
-#include "Physics/AmplitudeSum/AmpWigner2.hpp"
 
 #include "qft++.h"
 #include <boost/math/special_functions/legendre.hpp>
+
+#include "Core/Logging.hpp"
+#include "Physics/AmplitudeSum/AmpWigner2.hpp"
 
 AmpWigner2::AmpWigner2(unsigned int varId, unsigned int spin,
 		unsigned int mu, unsigned int muPrime) :

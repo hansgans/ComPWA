@@ -38,7 +38,7 @@ public:
 			std::shared_ptr<DoubleParameter> mag,
 			std::shared_ptr<DoubleParameter> phase,
 			std::shared_ptr<DoubleParameter> mass,
-			Spin spin, Spin m, Spin n, int P, int C,
+			int spin, int m, int n, int P, int C,
 			std::string mother, std::string particleA, std::string particleB,
 			std::shared_ptr<DoubleParameter> mesonRadius,
 			std::shared_ptr<DoubleParameter> motherRadius,
@@ -150,7 +150,7 @@ public:
 			std::shared_ptr<DoubleParameter> g, double ma, double mb,
 			std::shared_ptr<DoubleParameter> g2, double g2_ma, double g2_mb,
 			std::shared_ptr<DoubleParameter> g3, double g3_ma, double g3_mb,
-			Spin spin, std::shared_ptr<DoubleParameter> mesonRadius,
+			int spin, std::shared_ptr<DoubleParameter> mesonRadius,
 			formFactorType type);
 
 	virtual bool execute(ParameterList& paras,

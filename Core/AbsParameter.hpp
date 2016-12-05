@@ -24,22 +24,23 @@
 #ifndef _ABSPARAMETER_HPP_
 #define _ABSPARAMETER_HPP_
 
+//#define LOCAL  __attribute__ ((visibility ("hidden")))
+
 #include <string>
 #include <vector>
 #include <memory>
 #include <algorithm>
 #include <fstream>
 
+#ifdef USESERIALIZATION
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/map.hpp>
 #include <boost/serialization/nvp.hpp>
 #include <boost/serialization/shared_ptr.hpp>
 #include <boost/serialization/serialization.hpp>
-
+#endif
 
 #include "Core/ParObserver.hpp"
-//#include "Core/ParameterError.hpp"
-
 
 enum ParType { COMPLEX = 1, DOUBLE = 2, INTEGER = 3, BOOL = 4, MDOUBLE = 5, MCOMPLEX = 6, UNDEFINED = 0};
 static const char* ParNames[7] = { "UNDEFINED", "COMPLEX", "DOUBLE", "INTEGER", "BOOL", "MDOUBLE", "MCOMPLEX"};
@@ -152,6 +153,7 @@ protected:
 	virtual std::string make_val_str() =0;
 
 private:
+#ifdef USESERIALIZATION
 	friend class boost::serialization::access;
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)
@@ -159,11 +161,15 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(name_);
 		ar & BOOST_SERIALIZATION_NVP(type_);
 	}
+#endif
 
 };
+
+#ifdef USESERIALIZATION
 BOOST_SERIALIZATION_SHARED_PTR(AbsParameter)
 BOOST_CLASS_IMPLEMENTATION( AbsParameter, boost::serialization::object_serializable )
 BOOST_CLASS_TRACKING( AbsParameter, boost::serialization::track_never )
 //BOOST_SERIALIZATION_ASSUME_ABSTRACT(AbsParameter)
+#endif
 
 #endif

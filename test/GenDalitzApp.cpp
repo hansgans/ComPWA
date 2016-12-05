@@ -292,11 +292,11 @@ int main(int argc, char **argv) {
 		BOOST_LOG_TRIVIAL(error)<<"Environment Variable COMPWA_DIR not set?"<< std::endl;
 	}
 	std::string resoFile = path + "/test/JPSI_ypipi.xml";
-	boost::property_tree::ptree pt;
-	read_xml(resoFile , pt, boost::property_tree::xml_parser::trim_whitespace);
+//	boost::property_tree::ptree pt;
+//	read_xml(resoFile , pt, boost::property_tree::xml_parser::trim_whitespace);
 	AmpSumIntensity testBW("amp",normStyle::none,
 			std::shared_ptr<Efficiency>(new UnitEfficiency()), MaxEvents);
-	testBW.Configure(pt);
+	testBW.Configure(resoFile);
 	testBW.to_str();
 
 	ParameterList minPar;

@@ -11,18 +11,17 @@
 //-------------------------------------------------------------------------------
 
 #include <stdlib.h>
-#include "Physics/DPKinematics/DalitzKinematics.hpp"
-//#include "Physics/DPKinematics/DataPoint.hpp"
-#include "Core/PhysConst.hpp"
-#include "Core/DataPoint.hpp"
 
-#include <stdlib.h>
 #include "gsl/gsl_monte.h"
 #include "gsl/gsl_monte_plain.h"
 #include "gsl/gsl_monte_miser.h"
 #include "gsl/gsl_monte_vegas.h"
 #include "gsl/gsl_sf_legendre.h"
 
+#include "Core/PhysConst.hpp"
+#include "Core/DataPoint.hpp"
+#include "Core/Logging.hpp"
+#include "Physics/DPKinematics/DalitzKinematics.hpp"
 
 DalitzKinematics::DalitzKinematics(std::string _nameMother,
 		std::string _name1, std::string _name2, std::string _name3) :

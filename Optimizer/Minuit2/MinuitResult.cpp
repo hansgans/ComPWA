@@ -11,9 +11,115 @@
 
 #include <boost/archive/xml_oarchive.hpp>
 
+#include <gsl/gsl_rng.h>
+#include <gsl/gsl_sf_gamma.h>
+#include <gsl/gsl_randist.h>
+#include <gsl/gsl_vector.h>
+#include <gsl/gsl_matrix.h>
+#include <gsl/gsl_blas.h>
+#include <gsl/gsl_linalg.h>
+
 #include "Core/ProgressBar.hpp"
 #include "Core/Logging.hpp"
 #include "Optimizer/Minuit2/MinuitResult.hpp"
+
+
+/************** HELPER FUNCTION FOR GSL VECTOR AND MATRIX *******************/
+/** Print gsl_matrix **/
+inline void gsl_matrix_print(const gsl_matrix *m)
+{
+	for (size_t i = 0; i < m->size1; i++) {
+		for (size_t j = 0; j < m->size2; j++) {
+			printf("%g ", gsl_matrix_get(m, i, j));
+		}
+		printf("\n");
+	}
+};
+
+/** Print gsl_vector **/
+inline void gsl_vector_print(const gsl_vector *m)
+{
+	for (size_t i = 0; i < m->size; i++) {
+		std::printf("%g ", gsl_vector_get(m, i));
+	}
+	std::printf("\n");
+};
+
+/** Convert ParameterList to gsl vector **/
+inline gsl_vector* gsl_parameterList2Vec(const ParameterList& list){
+	gsl_vector* tmp = gsl_vector_alloc(list.GetNDouble());
+	unsigned int t=0;
+	for(unsigned int o=0;o<list.GetNDouble();o++){
+		std::shared_ptr<DoubleParameter> outPar = list.GetDoubleParameter(o);
+		if(outPar->IsFixed()) continue;
+		gsl_vector_set(tmp,t,outPar->GetValue());
+		t++;
+	}
+	//resize vector
+	gsl_vector* vec = gsl_vector_alloc(t);
+	for(unsigned int i=0; i<vec->size; i++)
+		gsl_vector_set(vec,i,gsl_vector_get(tmp,i));
+	return vec;
+};
+
+/** Convert std::vector matrix to gsl matrix **/
+inline gsl_matrix* gsl_vecVec2Matrix(const std::vector<std::vector<double>>& m){
+	gsl_matrix* tmp = gsl_matrix_alloc(m.size(),m.at(0).size());
+	for(size_t i=0; i<tmp->size1;i++){
+		for(unsigned int j=0; j<tmp->size2;j++){
+			gsl_matrix_set(tmp,i,j,m.at(i).at(j));
+		}
+	}
+	return tmp;
+};
+
+
+/** Multivariate Gaussian using cholesky decomposition
+ * A test application can be found at test/MultiVariateGaussianTestApp.cpp
+ *
+ * @param rnd Random number generator
+ * @param vecSize Size of data vector
+ * @param in Mean value(s)
+ * @param cov Covariance matrix
+ * @param res Resulting Vector
+ */
+void multivariateGaussian(const gsl_rng *rnd, const int vecSize,
+		const gsl_vector *in, const gsl_matrix *cov, gsl_vector *res){
+	//Generate and fill temporary covariance matrix
+	gsl_matrix *tmpM= gsl_matrix_alloc(vecSize,vecSize);
+	gsl_matrix_memcpy(tmpM,cov);
+
+	//Cholesky decomposition
+	int status = gsl_linalg_cholesky_decomp(tmpM);
+	if(status == GSL_EDOM )
+		BOOST_LOG_TRIVIAL(error)<<"Decomposition has failed!";
+
+	//Compute vector of random gaussian variables
+	for(unsigned int i=0; i<vecSize; i++)
+		gsl_vector_set( res, i, gsl_ran_ugaussian(rnd) );
+
+	//Debug
+	//	gsl_matrix_print(cov);
+	//	gsl_vector_print(in);
+	//	gsl_vector_print(res);
+	//	gsl_matrix_print(tmpM);
+
+	/*From the GNU GSL Documentation:
+	 * The function dtrmv compute the matrix-vector product x = op(A) x for the
+	 * triangular matrix A, where op(A) = A, A^T, A^H for TransA = CblasNoTrans,
+	 * CblasTrans, CblasConjTrans. When Uplo is CblasUpper then the upper
+	 * triangle of A is used, and when Uplo is CblasLower then the lower
+	 * triangle of A is used. If Diag is CblasNonUnit then the diagonal of
+	 * the matrix is used, but if Diag is CblasUnit then the diagonal elements
+	 * of the matrix A are taken as unity and are not referenced.
+	 */
+	gsl_blas_dtrmv(CblasLower, CblasNoTrans, CblasNonUnit, tmpM, res);
+
+	gsl_vector_add(res,in);
+	//free temporary object
+	gsl_matrix_free(tmpM);
+};
+/************** HELPER FUNCTION FOR GSL VECTOR AND MATRIX *******************/
 
 MinuitResult::MinuitResult() : initialLH(0), finalLH(0), trueLH(0),
 calcInterference(0)
@@ -457,11 +563,14 @@ void MinuitResult::printCovarianceMatrix(TableFormater* tableCov)
 
 void MinuitResult::writeXML(std::string filename)
 {
+#ifdef USESERIALIZATION
 	std::ofstream ofs(filename);
 	boost::archive::xml_oarchive oa(ofs);
 	oa << boost::serialization::make_nvp("FitParameters", finalParameters);
 	oa << boost::serialization::make_nvp("FitFractions", fractionList);
 	ofs.close();
+#endif
+
 	return;
 }
 
@@ -497,3 +606,4 @@ bool MinuitResult::hasFailed()
 
 	return failed;
 }
+
