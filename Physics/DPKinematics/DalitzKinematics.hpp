@@ -25,7 +25,6 @@
 #include <vector>
 
 #include "Core/Kinematics.hpp"
-#include "Core/Logging.hpp"
 
 class DalitzKinematics : public Kinematics
 {
