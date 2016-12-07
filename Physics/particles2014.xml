@@ -78,6 +78,32 @@
 		<P>-1</P>
 	</particle>
 	<particle>
+		<ID>311</ID>
+		<name>K0</name>
+		<mass>
+			<value>0.497614</value>
+			<error>
+				<value>0.000024</value>
+			</error>
+		</mass>
+		<charge>0</charge>
+		<J>0</J>
+		<P>-1</P>
+	</particle>
+	<particle>
+		<ID>-311</ID>
+		<name>anti-K0</name>
+		<mass>
+			<value>0.497614</value>
+			<error>
+				<value>0.000024</value>
+			</error>
+		</mass>
+		<charge>0</charge>
+		<J>0</J>
+		<P>-1</P>
+	</particle>
+	<particle>
 		<ID>310</ID>
 		<name>K_S0</name>
 		<mass>
@@ -86,7 +112,7 @@
 				<value>0.000024</value>
 			</error>
 		</mass>
-		<charge>1</charge>
+		<charge>0</charge>
 		<J>0</J>
 		<P>-1</P>
 	</particle>

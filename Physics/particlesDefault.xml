@@ -2,7 +2,7 @@
 <!-- particle data file -->
 <particleList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="particleSchema.xsd">
-	<reference>PDG2009</reference>
+	<reference>PDG2013</reference>
 	<particle>
 		<ID>22</ID>
 		<name>gamma</name>
@@ -21,15 +21,15 @@
 		<ID>221</ID>
 		<name>eta</name>
 		<mass>
-			<value>0.547853</value>
+			<value>0.547862</value>
 			<error>
-				<value>0.0</value>
+				<value>0.000018</value>
 			</error>
 		</mass>
 		<width>
-			<value>0.0</value>
+			<value>0.00000131</value>
 			<error>
-				<value>0.0</value>
+				<value>0.00000005</value>
 			</error>
 		</width>
 		<charge>0</charge>
@@ -43,7 +43,7 @@
 		<mass>
 			<value>0.1349766</value>
 			<error>
-				<value>0.0</value>
+				<value>0.0000006</value>
 			</error>
 		</mass>
 		<charge>0</charge>
@@ -55,9 +55,9 @@
 		<ID>-211</ID>
 		<name>pi-</name>
 		<mass>
-			<value> 0.139570</value>
+			<value>0.13957018</value>
 			<error>
-				<value>0.0</value>
+				<value>0.00000035</value>
 			</error>
 		</mass>
 		<charge>-1</charge>
@@ -68,9 +68,9 @@
 		<ID>211</ID>
 		<name>pi+</name>
 		<mass>
-			<value>0.139570</value>
+			<value>0.13957018</value>
 			<error>
-				<value>0.0</value>
+				<value>0.00000035</value>
 			</error>
 		</mass>
 		<charge>+1</charge>
@@ -78,15 +78,41 @@
 		<P>-1</P>
 	</particle>
 	<particle>
+		<ID>311</ID>
+		<name>K0</name>
+		<mass>
+			<value>0.497614</value>
+			<error>
+				<value>0.000024</value>
+			</error>
+		</mass>
+		<charge>0</charge>
+		<J>0</J>
+		<P>-1</P>
+	</particle>
+	<particle>
+		<ID>-311</ID>
+		<name>anti-K0</name>
+		<mass>
+			<value>0.497614</value>
+			<error>
+				<value>0.000024</value>
+			</error>
+		</mass>
+		<charge>0</charge>
+		<J>0</J>
+		<P>-1</P>
+	</particle>
+	<particle>
 		<ID>310</ID>
 		<name>K_S0</name>
 		<mass>
-			<value>0.4976</value>
+			<value>0.497614</value>
 			<error>
-				<value>0.0</value>
+				<value>0.000024</value>
 			</error>
 		</mass>
-		<charge>1</charge>
+		<charge>0</charge>
 		<J>0</J>
 		<P>-1</P>
 	</particle>
@@ -94,9 +120,9 @@
 		<ID>321</ID>
 		<name>K+</name>
 		<mass>
-			<value>0.49368</value>
+			<value>0.493677</value>
 			<error>
-				<value>0.0</value>
+				<value>0.000016</value>
 			</error>
 		</mass>
 		<charge>+1</charge>
@@ -107,9 +133,9 @@
 		<ID>-321</ID>
 		<name>K-</name>
 		<mass>
-			<value>0.49368</value>
+			<value>0.493677</value>
 			<error>
-				<value>0.0</value>
+				<value>0.000016</value>
 			</error>
 		</mass>
 		<charge>-1</charge>
@@ -122,7 +148,7 @@
 		<mass>
 			<value>1.86484</value>
 			<error>
-				<value>0.0</value>
+				<value>0.00007</value>
 			</error>
 		</mass>
 		<charge>0</charge>
@@ -135,7 +161,7 @@
 		<mass>
 			<value>1.86484</value>
 			<error>
-				<value>0.0</value>
+				<value>0.00007</value>
 			</error>
 		</mass>
 		<charge>0</charge>
@@ -146,9 +172,9 @@
 		<ID>411</ID>
 		<name>D+</name>
 		<mass>
-			<value>1.86962</value>
+			<value>1.86961</value>
 			<error>
-				<value>0.0</value>
+				<value>0.0001</value>
 			</error>
 		</mass>
 		<charge>+1</charge>
@@ -159,9 +185,9 @@
 		<ID>-411</ID>
 		<name>D-</name>
 		<mass>
-			<value>1.86962</value>
+			<value>1.86961</value>
 			<error>
-				<value>0.0</value>
+				<value>0.0001</value>
 			</error>
 		</mass>
 		<charge>-1</charge>
@@ -174,15 +200,15 @@
 		<ID>443</ID>
 		<name>J/psi</name>
 		<mass>
-			<value>3.0969</value>
+			<value>3.096916</value>
 			<error>
-				<value>0.0</value>
+				<value>0.000011</value>
 			</error>
 		</mass>
 		<width>
-			<value>0.000093</value>
+			<value>0.0000929</value>
 			<error>
-				<value>0.0</value>
+				<value>0.0000028</value>
 			</error>
 		</width>
 		<charge>0</charge>
@@ -194,15 +220,15 @@
 		<ID>333</ID>
 		<name>phi(1020)</name>
 		<mass>
-			<value>1.01946</value>
+			<value>1.019461</value>
 			<error>
-				<value>0.0</value>
+				<value>0.000019</value>
 			</error>
 		</mass>
 		<width>
-			<value>0.00426</value>
+			<value>0.004266</value>
 			<error>
-				<value>0.0</value>
+				<value>0.000031</value>
 			</error>
 		</width>
 		<charge>0</charge>
@@ -213,15 +239,15 @@
 		<ID>30221</ID>
 		<name>f0(1370)</name>
 		<mass>
-			<value>1.37</value>
+			<value>1.35</value>
 			<error>
-				<value>0.0</value>
+				<value>0.15</value>
 			</error>
 		</mass>
 		<width>
 			<value>0.35</value>
 			<error>
-				<value>0.0</value>
+				<value>0.15</value>
 			</error>
 		</width>
 		<charge>0</charge>
@@ -232,15 +258,15 @@
 		<ID>9000111</ID>
 		<name>a0_0</name>
 		<mass>
-			<value>0.9847</value>
+			<value>0.98</value>
 			<error>
-				<value>0.0</value>
+				<value>0.02</value>
 			</error>
 		</mass>
 		<width>
-			<value>0.057</value>
+			<value>0.075</value>
 			<error>
-				<value>0.0</value>
+				<value>0.025</value>
 			</error>
 		</width>
 		<charge>0</charge>
@@ -259,15 +285,15 @@
 		<ID>9000211</ID>
 		<name>a0_+</name>
 		<mass>
-			<value>0.9847</value>
+			<value>0.98</value>
 			<error>
-				<value>0.0</value>
+				<value>0.02</value>
 			</error>
 		</mass>
 		<width>
-			<value>0.057</value>
+			<value>0.075</value>
 			<error>
-				<value>0.0</value>
+				<value>0.025</value>
 			</error>
 		</width>
 		<charge>+1</charge>
@@ -283,17 +309,17 @@
 	</particleFlatte>
 	<particleFlatte>
 		<ID>-9000211</ID>
-		<name>a0_-</name>
+		<name>a0_+</name>
 		<mass>
-			<value>0.9847</value>
+			<value>0.98</value>
 			<error>
-				<value>0.0</value>
+				<value>0.02</value>
 			</error>
 		</mass>
 		<width>
-			<value>0.057</value>
+			<value>0.075</value>
 			<error>
-				<value>0.0</value>
+				<value>0.025</value>
 			</error>
 		</width>
 		<charge>-1</charge>
