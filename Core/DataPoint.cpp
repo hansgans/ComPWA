@@ -100,6 +100,7 @@ void dataPoint::setVal(std::string name, double val)
 
 void dataPoint::setVal(unsigned int num, double val)
 {
+	if(var.size() == 0) init(); //dataPoint was not initialized
 	try{
 		var.at(num)=val;
 	} catch (...) {
