@@ -31,6 +31,7 @@ dataPoint::dataPoint(int a, int b, double invMassSqA, double invMassSqB) :
 
 void dataPoint::Set(int a, int b, double invMassSqA, double invMassSqB)
 {
+	var = std::vector<double>(Kinematics::instance()->GetNVars(), 0);
 	Kinematics::instance()->FillDataPoint(a,b,invMassSqA,invMassSqB,*this);
 	return;
 }
@@ -54,8 +55,7 @@ dataPoint::dataPoint( const Event& ev ) : weight(1.), eff(1.)
 
 dataPoint::dataPoint(): weight(1.), eff(1.)
 {
-	init();
-	return;
+
 }
 
 unsigned int dataPoint::getID(std::string name) const
