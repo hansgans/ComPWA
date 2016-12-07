@@ -325,10 +325,10 @@ void AmpAbsDynamicalFunction::Configure(
 		}
 	}
 
-	auto tmp_spin = pt.get_optional<int>("int");
+	auto tmp_spin = pt.get_optional<int>("Spin");
 	if(!tmp_spin)
 		throw BadParameter("AmpAbsDynamicalFunction::Configure() | "
-				"int for "+_name+" not specified!");
+				"Spin for "+_name+" not specified!");
 	_spin = int(tmp_spin.get());
 
 	auto tmp_parity = pt.get_optional<int>("Parity");
