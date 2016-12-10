@@ -911,19 +911,21 @@ private:
 	template<class archive>
 	void serialize(archive& ar, const unsigned int version)
 	{
-		using namespace boost::serialization;
-		ar & make_nvp("AbsParameter", base_object<AbsParameter>(*this) );
+		ar & boost::serialization::make_nvp(
+				"AbsParameter",
+				boost::serialization::base_object<AbsParameter>(*this)
+		);
 		//		ar & BOOST_SERIALIZATION_BASE_OBJECT_NVP(AbsParameter);  //serialize base class
-		ar & make_nvp("bounds",bounds_);
-		ar & make_nvp("usebounds",usebounds_);
-		ar & make_nvp("isFixed",fixed_);
-		ar & make_nvp("value",val_);
-		ar & make_nvp("min_value",min_);
-		ar & make_nvp("max_value",max_);
+		ar & boost::serialization::make_nvp("bounds",bounds_);
+		ar & boost::serialization::make_nvp("usebounds",usebounds_);
+		ar & boost::serialization::make_nvp("isFixed",fixed_);
+		ar & boost::serialization::make_nvp("value",val_);
+		ar & boost::serialization::make_nvp("min_value",min_);
+		ar & boost::serialization::make_nvp("max_value",max_);
 		try{
-			ar & make_nvp("errorType",errorType);
-			ar & make_nvp("errorLow",errorLow);
-			ar & make_nvp("errorHigh",errorHigh);
+			ar & boost::serialization::make_nvp("errorType",errorType);
+			ar & boost::serialization::make_nvp("errorLow",errorLow);
+			ar & boost::serialization::make_nvp("errorHigh",errorHigh);
 		} catch (...) {
 			errorLow = 0;
 			errorHigh = 0;
@@ -933,18 +935,20 @@ private:
 #endif
 
 };
+}
 
 #ifdef USESERIALIZATION
-BOOST_SERIALIZATION_SHARED_PTR(DoubleParameter)
-BOOST_CLASS_IMPLEMENTATION( DoubleParameter, boost::serialization::object_serializable )
-BOOST_CLASS_TRACKING( DoubleParameter, boost::serialization::track_never )
-BOOST_CLASS_IMPLEMENTATION( std::shared_ptr<DoubleParameter>, boost::serialization::object_serializable )
-BOOST_CLASS_TRACKING( std::shared_ptr<DoubleParameter>, boost::serialization::track_never )
-BOOST_CLASS_IMPLEMENTATION( std::vector<std::shared_ptr<DoubleParameter> >, boost::serialization::object_serializable )
-BOOST_CLASS_TRACKING( std::vector<std::shared_ptr<DoubleParameter> >, boost::serialization::track_never )
+	BOOST_SERIALIZATION_SHARED_PTR( COMPWA::DoubleParameter)
+	BOOST_CLASS_IMPLEMENTATION( COMPWA::DoubleParameter, boost::serialization::object_serializable )
+	BOOST_CLASS_TRACKING( COMPWA::DoubleParameter, boost::serialization::track_never )
+	BOOST_CLASS_IMPLEMENTATION( std::shared_ptr<COMPWA::DoubleParameter>, boost::serialization::object_serializable )
+	BOOST_CLASS_TRACKING( std::shared_ptr<COMPWA::DoubleParameter>, boost::serialization::track_never )
+	BOOST_CLASS_IMPLEMENTATION( std::vector<std::shared_ptr<COMPWA::DoubleParameter> >, boost::serialization::object_serializable )
+	BOOST_CLASS_TRACKING( std::vector<std::shared_ptr<COMPWA::DoubleParameter> >, boost::serialization::track_never )
 #endif
 
 
+namespace COMPWA {
 class IntegerParameter : public AbsParameter
 {
 

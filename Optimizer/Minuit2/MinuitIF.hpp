@@ -31,11 +31,14 @@
 #include <boost/serialization/nvp.hpp>
 #endif
 
+#include "Minuit2/MnStrategy.h"
+
 #include "Core/ParameterList.hpp"
 #include "Optimizer/Optimizer.hpp"
 #include "Optimizer/ControlParameter.hpp"
 #include "Optimizer/Minuit2/MinuitFcn.hpp"
 #include "Optimizer/Minuit2/MinuitResult.hpp"
+
 
 namespace COMPWA {
 using namespace ROOT::Minuit2;

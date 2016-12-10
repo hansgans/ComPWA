@@ -166,13 +166,13 @@ private:
 #endif
 
 };
+}
 
 #ifdef USESERIALIZATION
-BOOST_SERIALIZATION_SHARED_PTR(AbsParameter)
-BOOST_CLASS_IMPLEMENTATION( AbsParameter, boost::serialization::object_serializable )
-BOOST_CLASS_TRACKING( AbsParameter, boost::serialization::track_never )
+BOOST_SERIALIZATION_SHARED_PTR(COMPWA::AbsParameter)
+BOOST_CLASS_IMPLEMENTATION( COMPWA::AbsParameter, boost::serialization::object_serializable )
+BOOST_CLASS_TRACKING( COMPWA::AbsParameter, boost::serialization::track_never )
 //BOOST_SERIALIZATION_ASSUME_ABSTRACT(AbsParameter)
 #endif
 
-}
 #endif

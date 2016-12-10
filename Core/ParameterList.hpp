@@ -685,10 +685,12 @@ private:
 
 };
 
+}
+
 #ifdef USESERIALIZATION
-BOOST_SERIALIZATION_SHARED_PTR(ParameterList)
-BOOST_CLASS_IMPLEMENTATION( ParameterList, boost::serialization::object_serializable )
-BOOST_CLASS_TRACKING( ParameterList, boost::serialization::track_never )
+BOOST_SERIALIZATION_SHARED_PTR( COMPWA::ParameterList )
+BOOST_CLASS_IMPLEMENTATION( COMPWA::ParameterList, boost::serialization::object_serializable )
+BOOST_CLASS_TRACKING( COMPWA::ParameterList, boost::serialization::track_never )
 #endif
 
 //---/ Wrapper for std::shared_ptr<> /------------------------------------------
@@ -731,6 +733,5 @@ namespace boost {
 	}//ns:serialization
 }//ns:boost
 #endif
-}
 
 #endif
