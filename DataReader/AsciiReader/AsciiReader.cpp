@@ -32,7 +32,7 @@
 
 //_____ F U N C T I O N S ______________________________________________________
 
-namespace COMPWA {
+namespace ComPWA {
 // Constructors and destructors
 AsciiReader::AsciiReader( const std::string inConfigFile, const int particles  )
 {

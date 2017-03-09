@@ -29,7 +29,7 @@
 #include "Core/FunctionTree.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 //using namespace std;
 class AmpWigner2{
 public:

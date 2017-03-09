@@ -13,10 +13,11 @@
 //-------------------------------------------------------------------------------
 #include <vector>
 #include <string>
+#include <ostream>
 #include "Core/Particle.hpp"
 #include "Core/Event.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 
 Event::Event():fWeight(1.),fName(""),fFlavour(0),fCharge(0),fEff(1.){
 
@@ -48,8 +49,8 @@ std::ostream& operator<< (std::ostream& stream, const Event& ev){
 	stream<< "Event name="<<ev.fName<<" weight="<<ev.fWeight<<" efficiency="<<ev.fEff
 			<<" flavour="<<ev.fFlavour<<" charge="<<ev.fCharge<<std::endl;
 	stream<< " Printing particles (N="<<ev.fParticles.size()<<"):"<<std::endl;
-	for(auto i: ev.fParticles)
-		stream<<i<<std::endl;
+	for(auto i=ev.fParticles.begin(); i != ev.fParticles.end(); i++)
+		stream<<*i<<std::endl;
 
 	return stream;
 }

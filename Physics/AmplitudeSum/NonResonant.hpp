@@ -13,7 +13,7 @@
 #include "Core/Parameter.hpp"
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class NonResonant : public AmpAbsDynamicalFunction
 {
 public:

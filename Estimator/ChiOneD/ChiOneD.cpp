@@ -17,7 +17,7 @@
 #include "Estimator/ChiOneD/ChiOneD.hpp"
 #include "Core/ParameterList.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 ChiOneD::ChiOneD(std::shared_ptr<Amplitude> inPIF, std::shared_ptr<Data> inDIF) : pPIF_(inPIF), pDIF_(inDIF){
 
 }

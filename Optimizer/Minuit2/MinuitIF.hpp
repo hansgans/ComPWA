@@ -40,7 +40,7 @@
 #include "Optimizer/Minuit2/MinuitResult.hpp"
 
 
-namespace COMPWA {
+namespace ComPWA {
 using namespace ROOT::Minuit2;
 
 class MinuitIF : public Optimizer

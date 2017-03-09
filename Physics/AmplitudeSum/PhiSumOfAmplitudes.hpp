@@ -19,7 +19,7 @@
 #include <vector>
 #include <memory>
 
-namespace COMPWA {
+namespace ComPWA {
 class TIterator;
 class DoubleParameter;
  

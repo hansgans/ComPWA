@@ -43,7 +43,7 @@
 
 #include "Core/ParObserver.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 enum ParType { COMPLEX = 1, DOUBLE = 2, INTEGER = 3, BOOL = 4, MDOUBLE = 5, MCOMPLEX = 6, UNDEFINED = 0};
 static const char* ParNames[7] = { "UNDEFINED", "COMPLEX", "DOUBLE", "INTEGER", "BOOL", "MDOUBLE", "MCOMPLEX"};
 
@@ -169,9 +169,9 @@ private:
 }
 
 #ifdef USESERIALIZATION
-BOOST_SERIALIZATION_SHARED_PTR(COMPWA::AbsParameter)
-BOOST_CLASS_IMPLEMENTATION( COMPWA::AbsParameter, boost::serialization::object_serializable )
-BOOST_CLASS_TRACKING( COMPWA::AbsParameter, boost::serialization::track_never )
+BOOST_SERIALIZATION_SHARED_PTR(ComPWA::AbsParameter)
+BOOST_CLASS_IMPLEMENTATION( ComPWA::AbsParameter, boost::serialization::object_serializable )
+BOOST_CLASS_TRACKING( ComPWA::AbsParameter, boost::serialization::track_never )
 //BOOST_SERIALIZATION_ASSUME_ABSTRACT(AbsParameter)
 #endif
 

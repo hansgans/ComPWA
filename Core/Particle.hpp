@@ -26,7 +26,7 @@
 #include <iostream>
 #include <stdexcept>
 
-namespace COMPWA {
+namespace ComPWA {
 class Particle
 {
 public:

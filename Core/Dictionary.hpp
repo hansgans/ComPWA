@@ -34,7 +34,7 @@
 #include "DataReader/Data.hpp"
 #include "Core/Amplitude.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 
 struct dataInfo{
   std::string name;

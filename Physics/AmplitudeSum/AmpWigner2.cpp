@@ -21,7 +21,7 @@
 #include "Core/Logging.hpp"
 #include "Physics/AmplitudeSum/AmpWigner2.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 AmpWigner2::AmpWigner2(unsigned int varId, unsigned int spin,
 		unsigned int mu, unsigned int muPrime) :
 		_varId(varId), _spin(spin), _mu(mu), _muPrime(muPrime)

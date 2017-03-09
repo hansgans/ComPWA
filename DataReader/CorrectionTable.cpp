@@ -11,7 +11,7 @@
 #include "Core/TableFormater.hpp"
 #include "DataReader/CorrectionTable.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 void CorrectionTable::Print() const{
 	if(sys.size() == 0 && antiSys.size() == 0) return; //don't print if empty
 	std::stringstream out;

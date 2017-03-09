@@ -23,7 +23,7 @@
 #ifndef _PAROBSERVER_HPP_
 #define _PAROBSERVER_HPP_
 
-namespace COMPWA {
+namespace ComPWA {
 class ParObserver
 {
 public:

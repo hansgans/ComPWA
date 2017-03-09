@@ -32,7 +32,7 @@
 #include "Core/AbsParameter.hpp"
 #include "Core/Parameter.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class FunctionTree //: public ControlParametr
 {
 public:

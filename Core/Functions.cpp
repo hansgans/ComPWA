@@ -8,7 +8,7 @@
 #include "Core/Logging.hpp"
 #include "Core/Functions.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 bool Inverse::execute(ParameterList& paras,
 		std::shared_ptr<AbsParameter>& out)
 {

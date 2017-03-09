@@ -7,7 +7,7 @@
 
 #include "Core/TableFormater.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 void TableFormater::delim()
 {
 	*out<<sep;

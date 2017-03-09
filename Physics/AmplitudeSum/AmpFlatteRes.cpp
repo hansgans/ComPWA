@@ -24,7 +24,7 @@
 #include "Physics/AmplitudeSum/AmpFlatteRes.hpp"
 #include "Physics/AdvancedStrategies.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 AmpFlatteRes::AmpFlatteRes( normStyle nS, int calls ) :
 AmpAbsDynamicalFunction( nS, calls )
 {

@@ -30,7 +30,7 @@
 #include "Core/ParameterList.hpp"
 #include "Core/FitResult.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class Optimizer
 {
 

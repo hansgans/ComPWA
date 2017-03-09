@@ -10,7 +10,7 @@
 #include "Core/Logging.hpp"
 #include "DataReader/DataCorrection.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 MomentumCorrection::MomentumCorrection(std::vector<CorrectionTable> inCorr, std::string t) :
 corrections(inCorr), title(t)
 {

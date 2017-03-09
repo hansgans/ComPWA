@@ -15,7 +15,7 @@
 
 #include "Physics/AmplitudeSum/PhiSumOfAmplitudes.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
  PhiSumOfAmplitudes::PhiSumOfAmplitudes(const char *name) : _name(name)
  { 
 //   _pdfIter = _pdfList.createIterator() ;

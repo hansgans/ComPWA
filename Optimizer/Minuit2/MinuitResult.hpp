@@ -38,7 +38,7 @@
 #include "Minuit2/MnUserParameterState.h"
 #include "Minuit2/FunctionMinimum.h"
 
-namespace COMPWA {
+namespace ComPWA {
 using namespace ROOT::Minuit2;
 
 class MinuitResult : public FitResult

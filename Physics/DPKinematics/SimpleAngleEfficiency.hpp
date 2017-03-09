@@ -25,7 +25,7 @@
 #include "Core/Efficiency.hpp"
 #include "Physics/DPKinematics/SimpleEfficiency.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class SimpleAngleEfficiency : public Efficiency {
 
 protected:

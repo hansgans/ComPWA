@@ -8,7 +8,7 @@
 #ifndef PHYSICS_AMPLITUDESUM_ADVANCEDSTRATEGIES_HPP_
 #define PHYSICS_AMPLITUDESUM_ADVANCEDSTRATEGIES_HPP_
 
-namespace COMPWA {
+namespace ComPWA {
 class phspFactorStrat : public Strategy
 {
 public:

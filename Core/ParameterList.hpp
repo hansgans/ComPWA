@@ -39,7 +39,7 @@
 #include "Core/Parameter.hpp"
 #include "Core/Exceptions.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class ParameterList
 {
 
@@ -688,9 +688,9 @@ private:
 }
 
 #ifdef USESERIALIZATION
-BOOST_SERIALIZATION_SHARED_PTR( COMPWA::ParameterList )
-BOOST_CLASS_IMPLEMENTATION( COMPWA::ParameterList, boost::serialization::object_serializable )
-BOOST_CLASS_TRACKING( COMPWA::ParameterList, boost::serialization::track_never )
+BOOST_SERIALIZATION_SHARED_PTR( ComPWA::ParameterList )
+BOOST_CLASS_IMPLEMENTATION( ComPWA::ParameterList, boost::serialization::object_serializable )
+BOOST_CLASS_TRACKING( ComPWA::ParameterList, boost::serialization::track_never )
 #endif
 
 //---/ Wrapper for std::shared_ptr<> /------------------------------------------

@@ -25,7 +25,7 @@
 #include <string>
 
 
-namespace COMPWA {
+namespace ComPWA {
 class Exception : public std::exception {
 public:
   Exception(const Exception& e) throw() :

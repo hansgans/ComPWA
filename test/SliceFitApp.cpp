@@ -88,12 +88,12 @@ int main(int argc, char **argv){
 
 	std::string file="test/3Part-4vecs.root";
 
-	const char* pPath = getenv("COMPWA_DIR");
+	const char* pPath = getenv("ComPWA_DIR");
 	std::string path = "";
 	try{
 		path = std::string(pPath);
 	}catch(std::logic_error& ex){
-		BOOST_LOG_TRIVIAL(error)<<"Environment Variable COMPWA_DIR not set?"<<std::endl;
+		BOOST_LOG_TRIVIAL(error)<<"Environment Variable ComPWA_DIR not set?"<<std::endl;
 	}
 	std::string resoFile=path+"/test/JPSI_ypipi.xml";
 	boost::property_tree::ptree pt;

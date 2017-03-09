@@ -38,7 +38,7 @@
 #include "Core/Event.hpp"
 #include "Core/ParameterList.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 /*class  FitFuncObject {
  public:
    // use constructor to customize your function object

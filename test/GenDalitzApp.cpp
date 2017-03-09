@@ -284,12 +284,12 @@ int main(int argc, char **argv) {
 	//load resonances
 	//DPKinematics kin(M,Br,m1,m2,m3,"gamma","pi0","pi0");
 	//dataPoint::instance(kin);
-	const char* pPath = getenv("COMPWA_DIR");
+	const char* pPath = getenv("ComPWA_DIR");
 	std::string path = "";
 	try {
 		path = std::string(pPath);
 	} catch (std::logic_error) {
-		BOOST_LOG_TRIVIAL(error)<<"Environment Variable COMPWA_DIR not set?"<< std::endl;
+		BOOST_LOG_TRIVIAL(error)<<"Environment Variable ComPWA_DIR not set?"<< std::endl;
 	}
 	std::string resoFile = path + "/test/JPSI_ypipi.xml";
 //	boost::property_tree::ptree pt;

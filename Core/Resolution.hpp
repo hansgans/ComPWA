@@ -8,7 +8,7 @@
 #ifndef CORE_RESOLUTION_HPP_
 #define CORE_RESOLUTION_HPP_
 
-namespace COMPWA {
+namespace ComPWA {
 
 class Resolution
 {

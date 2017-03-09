@@ -30,7 +30,7 @@
 
 class ControlParameter;
 
-namespace COMPWA {
+namespace ComPWA {
 
 class MinuitFcn : public ROOT::Minuit2::FCNBase
 {

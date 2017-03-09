@@ -29,7 +29,7 @@
 #include "Core/FunctionTree.hpp"
 #include "Core/Amplitude.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class ControlParameter{
 
 public:

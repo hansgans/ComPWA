@@ -15,7 +15,7 @@
 #include "Core/DataPoint.hpp"
 #include "Core/Logging.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 
 void dataPoint::init()
 {

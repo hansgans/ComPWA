@@ -17,7 +17,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 
-namespace COMPWA {
+namespace ComPWA {
 PhysConst* PhysConst::inst = NULL;
 
 PhysConst::PhysConst(){
@@ -30,7 +30,7 @@ PhysConst::PhysConst(){
 	try{
 		path = std::string(pPath);
 	}catch(std::logic_error){
-		BOOST_LOG_TRIVIAL(error)<<"Environment Variable COMPWA_DIR not set?"<<std::endl;
+		BOOST_LOG_TRIVIAL(error)<<"Environment Variable $COMPWA_DIR not set?"<<std::endl;
 	}
 	particleFileName = path+"/Physics/particles.xml";
 	particleDefaultFileName = path+"/Physics/particlesDefault.xml";

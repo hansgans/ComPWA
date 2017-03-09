@@ -17,7 +17,7 @@
 #include "Physics/DPKinematics/SimpleAngleEfficiency.hpp"
 
 
-namespace COMPWA {
+namespace ComPWA {
 //SimpleAngleEfficiency::SimpleAngleEfficiency(SimpleEfficiency* eff) : effHist(new SimpleEfficiency(*eff)){
 SimpleAngleEfficiency::SimpleAngleEfficiency(SimpleEfficiency* eff) {
 	effHist = std::shared_ptr<SimpleEfficiency>(new SimpleEfficiency(*eff));

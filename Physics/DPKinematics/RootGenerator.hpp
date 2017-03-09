@@ -28,7 +28,7 @@
 #include "Core/Particle.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class RootGenerator : public Generator {
 protected:
 	TGenPhaseSpace event;

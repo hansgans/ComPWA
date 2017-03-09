@@ -15,7 +15,7 @@
 #include <vector>
 #include <memory>
 
-namespace COMPWA {
+namespace ComPWA {
 /*! \class SimpleEfficiency
  * @file SimpleEfficiency.hpp
  * Implementation of an efficiency class. Similar functionality to TEfficiency

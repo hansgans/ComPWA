@@ -14,7 +14,7 @@
 #include <cmath>
 #include <stdexcept>
 
-namespace COMPWA {
+namespace ComPWA {
 class CorrectionTable
 {
 public:

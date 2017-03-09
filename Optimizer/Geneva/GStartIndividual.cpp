@@ -38,7 +38,7 @@
 #include "Core/Logging.hpp"
 #include "GStartIndividual.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 BOOST_CLASS_EXPORT_IMPLEMENT(Gem::Geneva::GStartIndividual)
 
 namespace Gem

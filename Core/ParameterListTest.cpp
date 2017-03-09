@@ -20,7 +20,7 @@
 #include <memory>
 #include <vector>
 
-namespace COMPWA {
+namespace ComPWA {
 BOOST_AUTO_TEST_SUITE(ParameterListSuite);
 
 BOOST_AUTO_TEST_CASE(ConstructorCheck)

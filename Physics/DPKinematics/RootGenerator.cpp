@@ -10,7 +10,7 @@
 #include "Physics/DPKinematics/RootGenerator.hpp"
 
 
-namespace COMPWA {
+namespace ComPWA {
 RootGenerator::RootGenerator(int seed){
 	gRandom = new TRandom3(0);
 	if(seed!=-1) setSeed(seed);

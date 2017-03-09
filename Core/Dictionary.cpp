@@ -24,7 +24,7 @@
 
 #include "Core/Dictionary.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 
 Dictionary::Dictionary() {
 

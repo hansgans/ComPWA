@@ -25,7 +25,7 @@
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 #include "Physics/AdvancedStrategies.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 AmpAbsDynamicalFunction::AmpAbsDynamicalFunction( normStyle nS, int calls) :
 _parity(+1), _cparity(0),
 _ffType(formFactorType::BlattWeisskopf), _nCalls(calls),
@@ -338,7 +338,7 @@ void AmpAbsDynamicalFunction::Configure(
 	if( tmp_parity.get()!=1 && tmp_parity.get()!=-1)
 		throw BadParameter("AmpAbsDynamicalFunction::Configure() | "
 				"Parity for "+_name+" not valid: "
-				+std::to_string(tmp_parity.get()));
+				+std::to_string((long double)tmp_parity.get()));
 	_parity = tmp_parity.get();
 
 	auto tmp_cparity = pt.get_optional<int>("Cparity");
@@ -347,7 +347,7 @@ void AmpAbsDynamicalFunction::Configure(
 		if( std::abs(tmp_cparity.get()) > 1 )
 			throw BadParameter("AmpAbsDynamicalFunction::Configure() | "
 					"Charge parity for "+_name+" not valid: "
-					+std::to_string(tmp_cparity.get())
+					+std::to_string((long double)tmp_cparity.get())
 			);
 		_cparity = tmp_cparity.get();
 	}
@@ -890,38 +890,38 @@ bool couplingToWidthStrat::execute(ParameterList& paras,
 		if( paras.GetNBool() != check_nBool )
 			throw( BadParameter("couplingToWidthStrat::execute() | "
 					"Number of BoolParameters does not match: "
-					+std::to_string(paras.GetNBool())+" given but "
-					+std::to_string(check_nBool)+ " expected.")
+					+std::to_string((long double)paras.GetNBool())+" given but "
+					+std::to_string((long double)check_nBool)+ " expected.")
 			);
 		if( paras.GetNInteger() != check_nInt )
 			throw( BadParameter("couplingToWidthStrat::execute() | "
 					"Number of IntParameters does not match: "
-					+std::to_string(paras.GetNInteger())+" given but "
-					+std::to_string(check_nInt)+ " expected.")
+					+std::to_string((long double)paras.GetNInteger())+" given but "
+					+std::to_string((long double)check_nInt)+ " expected.")
 			);
 		if( paras.GetNDouble() != check_nDouble )
 			throw( BadParameter("couplingToWidthStrat::execute() | "
 					"Number of DoubleParameters does not match: "
-					+std::to_string(paras.GetNDouble())+" given but "
-					+std::to_string(check_nDouble)+ " expected.")
+					+std::to_string((long double)paras.GetNDouble())+" given but "
+					+std::to_string((long double)check_nDouble)+ " expected.")
 			);
 		if( paras.GetNComplex() != check_nComplex )
 			throw( BadParameter("couplingToWidthStrat::execute() | "
 					"Number of ComplexParameters does not match: "
-					+std::to_string(paras.GetNComplex())+" given but "
-					+std::to_string(check_nComplex)+ " expected.")
+					+std::to_string((long double)paras.GetNComplex())+" given but "
+					+std::to_string((long double)check_nComplex)+ " expected.")
 			);
 		if( paras.GetNMultiDouble() != check_nMDouble )
 			throw( BadParameter("couplingToWidthStrat::execute() | "
 					"Number of MultiDoubles does not match: "
-					+std::to_string(paras.GetNMultiDouble())+" given but "
-					+std::to_string(check_nMDouble)+ " expected.")
+					+std::to_string((long double)paras.GetNMultiDouble())+" given but "
+					+std::to_string((long double)check_nMDouble)+ " expected.")
 			);
 		if( paras.GetNMultiComplex() != check_nMComplex )
 			throw( BadParameter("couplingToWidthStrat::execute() | "
 					"Number of MultiComplexes does not match: "
-					+std::to_string(paras.GetNMultiComplex())+" given but "
-					+std::to_string(check_nMComplex)+ " expected.")
+					+std::to_string((long double)paras.GetNMultiComplex())+" given but "
+					+std::to_string((long double)check_nMComplex)+ " expected.")
 			);
 #endif
 

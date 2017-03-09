@@ -34,7 +34,7 @@
 #include "Core/Resolution.hpp"
 #include "DataReader/DataCorrection.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class Data
 {
 public:

@@ -18,7 +18,7 @@
 #include "Core/DataPoint.hpp"
 #include "Core/FunctionTree.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class Resonance
 {
 public:

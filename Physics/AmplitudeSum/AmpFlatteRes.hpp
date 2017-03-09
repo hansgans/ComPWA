@@ -25,7 +25,7 @@
 #include <cmath>
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 using namespace std;
 
 class AmpFlatteRes : public AmpAbsDynamicalFunction

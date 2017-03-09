@@ -8,7 +8,7 @@
 #include "Core/Logging.hpp"
 #include "Core/Amplitude.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 
 void Amplitude::UpdateParameters(ParameterList& par)
 {

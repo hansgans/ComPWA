@@ -23,7 +23,7 @@
 #include "Core/Logging.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 DalitzKinematics::DalitzKinematics(std::string _nameMother,
 		std::string _name1, std::string _name2, std::string _name3) :
 		name1(_name1), name2(_name2), name3(_name3), massIdsSet(false),
@@ -124,7 +124,7 @@ bool DalitzKinematics::AreBoxVariables(unsigned int idA, unsigned int idB) const
 	if( idA >= GetNVars() || idB >= GetNVars() )
 		throw std::runtime_error("DalitzKinematics::AreBoxVariables() | "
 				"Variables out of range: "
-				+std::to_string(idA)+","+std::to_string(idB));
+				+std::to_string((long double)idA)+","+std::to_string((long double)idB));
 	if( idA == 0 || idA == 1 ||idA == 2 )
 		if( idB > 2 )
 			return 1;
@@ -163,12 +163,12 @@ void DalitzKinematics::FillDataPoint(int a, int b,
 	if( a != 0 && a != 1 && a != 2){
 		std::cout<<"A "<<a<<" "<<b<<" "<<invMassSqA<<std::endl;
 		throw std::runtime_error("DalitzKinematics::FillDataPoint() | "
-				"Particle ID out of range: "+std::to_string(a));
+				"Particle ID out of range: "+std::to_string((long double)a));
 	}
 	if( b != 0 && b != 1 && b != 2){
 		std::cout<<"B "<<a<<" "<<b<<" "<<invMassSqA<<std::endl;
 		throw std::runtime_error("DalitzKinematics::FillDataPoint() | "
-				"Particle ID out of range: "+std::to_string(b));
+				"Particle ID out of range: "+std::to_string((long double)b));
 	}
 
 	point.setWeight(1.0);//reset weight
@@ -259,7 +259,7 @@ std::pair<double,double> DalitzKinematics::GetMinMax(unsigned int i) const
 {
 	if(i >= GetNVars() )
 		throw WrongVariableID("DalitzKinematics::GetMinMax() | "
-				"Wrong variable ID "+std::to_string(i)+"!");
+				"Wrong variable ID "+std::to_string((long double)i)+"!");
 
 	//Limits for invariant masses
 	switch (i)
@@ -549,7 +549,7 @@ bool DalitzKinematics::IsWithinBoxPhsp(int idA, int idB,
 	if(!AreBoxVariables(idA, idB))
 		throw std::runtime_error("DalitzKinematics::AreBoxVariables() | "
 				"Variables do not form a square phase-space region: "
-				+std::to_string(idA)+","+std::to_string(idB));
+				+std::to_string((long double)idA)+","+std::to_string((long double)idB));
 
 	if( varA < GetMinMax(idA).first	|| varA > GetMinMax(idA).second )
 		return 0;

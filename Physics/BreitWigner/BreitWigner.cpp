@@ -19,7 +19,7 @@
 
 using namespace std;
 
-namespace COMPWA {
+namespace ComPWA {
 BreitWigner::BreitWigner(const double min, const double max):min_(min),max_(max)
 {
 	result.AddParameter(

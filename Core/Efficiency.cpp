@@ -12,7 +12,7 @@
 #include "Core/Logging.hpp"
 #include "Core/Efficiency.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 Efficiency::Efficiency()
 {
 

@@ -23,7 +23,7 @@
 #include "Core/ParameterList.hpp"
 #include "Core/Logging.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 ParameterList::ParameterList(){
 	//make_str();
 }
@@ -105,7 +105,7 @@ ParameterList::~ParameterList()
 std::shared_ptr<AbsParameter> ParameterList::GetParameter(const unsigned int i) {
 	if( i >= GetNParameter() )
 		throw BadParameter("ParameterList::GetParameter() | Parameter ID="
-				+std::to_string(i)+" not in list");
+				+std::to_string((long double)i)+" not in list");
 
 	unsigned int pos = 0;
 	if( i < vBool_.size() )
@@ -128,7 +128,7 @@ std::shared_ptr<AbsParameter> ParameterList::GetParameter(const unsigned int i) 
 
 	std::cout<<"aajsnajkknghjgjgjggjgjgj"<<std::endl;
 	throw BadParameter("ParameterList::GetParameter() | Parameter ID="
-			+std::to_string(i)+" not in list");
+			+std::to_string((long double)i)+" not in list");
 
 	return std::shared_ptr<AbsParameter>();
 }

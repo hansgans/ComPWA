@@ -37,7 +37,7 @@
 // Geneva header files go here
 #include "geneva/Go2.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class GenevaIF : public Optimizer {
 
 public:

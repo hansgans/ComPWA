@@ -13,7 +13,7 @@
 #include "Core/Kinematics.hpp"
 #include "Core/PhysConst.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 Kinematics* Kinematics::instance()
 {
 	if(!_inst) {

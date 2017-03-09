@@ -23,7 +23,7 @@
 #include "Core/Logging.hpp"
 #include "Physics/AmplitudeSum/AmpRelBreitWignerRes.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 AmpRelBreitWignerRes::AmpRelBreitWignerRes(const char *name,
 		unsigned int varIdA, unsigned int varIdB,
 		std::shared_ptr<DoubleParameter> mag, std::shared_ptr<DoubleParameter> phase,

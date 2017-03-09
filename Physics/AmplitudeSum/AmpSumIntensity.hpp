@@ -29,7 +29,7 @@
 #include "Physics/AmplitudeSum/AmpAbsDynamicalFunction.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class AmpSumIntensity : public Amplitude {
 
 public:

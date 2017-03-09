@@ -58,7 +58,7 @@
 // The individual that should be optimized
 #include "Optimizer/Geneva/GStartIndividual.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 using namespace Gem::Geneva;
 
 GenevaIF::GenevaIF(std::shared_ptr<ControlParameter> theData, std::string inConfigFileDir)

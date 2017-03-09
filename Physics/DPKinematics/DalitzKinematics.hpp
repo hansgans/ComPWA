@@ -26,7 +26,7 @@
 
 #include "Core/Kinematics.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class DalitzKinematics : public Kinematics
 {
 

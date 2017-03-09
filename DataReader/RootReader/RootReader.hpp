@@ -40,7 +40,7 @@
 #include "TTree.h"
 #include "TRandom3.h"
 
-namespace COMPWA {
+namespace ComPWA {
 class RootReader : public Data
 {
 public:

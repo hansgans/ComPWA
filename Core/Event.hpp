@@ -26,7 +26,7 @@
 #include <iostream>
 #include "Core/Particle.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class Event{
 
 public:

@@ -7,7 +7,7 @@
 #pragma link C++ nestedclass;
 #pragma link C++ nestedtypedef;
 
-#pragma link C++ namespace COMPWA;
-#pragma link C++ class COMPWA::SimpleEfficiency+;
+#pragma link C++ namespace ComPWA;
+#pragma link C++ class ComPWA::SimpleEfficiency+;
 
 #endif

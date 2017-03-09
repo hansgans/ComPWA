@@ -11,7 +11,7 @@
 #include <ctime>
 #include <iostream>
 
-namespace COMPWA {
+namespace ComPWA {
 class progressBar
 {
 public:

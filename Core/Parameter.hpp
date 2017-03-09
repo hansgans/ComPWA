@@ -33,7 +33,7 @@
 #include "Core/AbsParameter.hpp"
 #include "Core/Exceptions.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 enum ErrorType { SYM = 1, ASYM = 2, LHSCAN = 3, NOTDEF = 0};
 
 class MultiComplex: public AbsParameter
@@ -670,7 +670,7 @@ public:
 		if( !check_bounds(GetMinValue(),GetMaxValue()) )
 			throw std::runtime_error("DoubleParameter::UpdateParameter() | "
 					"Bounds not valid for parameter "+GetName()+": "
-					+std::to_string(GetValue())
+					+std::to_string((long double)GetValue())
 		+" ["+std::to_string((long double)GetMinValue())+";"
 		+std::to_string((long double)GetMaxValue())+"]!");
 
@@ -715,7 +715,7 @@ public:
 		if(usebounds_ && (inVal < GetMinValue() || inVal > GetMaxValue()) )
 			throw ParameterOutOfBound("DoubleParameter::SetValue() | "
 					"Parameter "+GetName()+" not within bounds: val="
-					+std::to_string(inVal)
+					+std::to_string((long double)inVal)
 		+" ["+std::to_string((long double)GetMinValue())+";"
 		+std::to_string((long double)GetMaxValue())+"]!");
 
@@ -734,7 +734,7 @@ public:
 		if(!check_bounds(min_,max_))
 			throw std::runtime_error("DoubleParameter::SetMinMaxValue() | "
 					"Bounds not valid for parameter "+GetName()+": "
-					+std::to_string(GetValue())
+					+std::to_string((long double)GetValue())
 		+" ["+std::to_string((long double)min_)+";"
 		+std::to_string((long double)max_)+"]!");
 		bounds_ = usebounds_ = true;
@@ -752,8 +752,8 @@ public:
 		if( !check_bounds(min_, max_) )
 			throw ParameterOutOfBound("DoubleParameter::SetMinValue() | "
 					"Boundary not valid: ["
-					+std::to_string(GetMinValue())+", "
-					+std::to_string(GetMaxValue())+"]!"
+					+std::to_string((long double)GetMinValue())+", "
+					+std::to_string((long double)GetMaxValue())+"]!"
 			);
 		bounds_ = usebounds_ = true;
 	}
@@ -770,8 +770,8 @@ public:
 		if( !check_bounds(min_, max_) )
 			throw ParameterOutOfBound("DoubleParameter::SetMaxValue() | "
 					"Boundary not valid: ["
-					+std::to_string(GetMinValue())+", "
-					+std::to_string(GetMaxValue())+"]!"
+					+std::to_string((long double)GetMinValue())+", "
+					+std::to_string((long double)GetMaxValue())+"]!"
 			);
 		bounds_ = usebounds_ = true;
 	}
@@ -938,17 +938,17 @@ private:
 }
 
 #ifdef USESERIALIZATION
-	BOOST_SERIALIZATION_SHARED_PTR( COMPWA::DoubleParameter)
-	BOOST_CLASS_IMPLEMENTATION( COMPWA::DoubleParameter, boost::serialization::object_serializable )
-	BOOST_CLASS_TRACKING( COMPWA::DoubleParameter, boost::serialization::track_never )
-	BOOST_CLASS_IMPLEMENTATION( std::shared_ptr<COMPWA::DoubleParameter>, boost::serialization::object_serializable )
-	BOOST_CLASS_TRACKING( std::shared_ptr<COMPWA::DoubleParameter>, boost::serialization::track_never )
-	BOOST_CLASS_IMPLEMENTATION( std::vector<std::shared_ptr<COMPWA::DoubleParameter> >, boost::serialization::object_serializable )
-	BOOST_CLASS_TRACKING( std::vector<std::shared_ptr<COMPWA::DoubleParameter> >, boost::serialization::track_never )
+	BOOST_SERIALIZATION_SHARED_PTR( ComPWA::DoubleParameter)
+	BOOST_CLASS_IMPLEMENTATION( ComPWA::DoubleParameter, boost::serialization::object_serializable )
+	BOOST_CLASS_TRACKING( ComPWA::DoubleParameter, boost::serialization::track_never )
+	BOOST_CLASS_IMPLEMENTATION( std::shared_ptr<ComPWA::DoubleParameter>, boost::serialization::object_serializable )
+	BOOST_CLASS_TRACKING( std::shared_ptr<ComPWA::DoubleParameter>, boost::serialization::track_never )
+	BOOST_CLASS_IMPLEMENTATION( std::vector<std::shared_ptr<ComPWA::DoubleParameter> >, boost::serialization::object_serializable )
+	BOOST_CLASS_TRACKING( std::vector<std::shared_ptr<ComPWA::DoubleParameter> >, boost::serialization::track_never )
 #endif
 
 
-namespace COMPWA {
+namespace ComPWA {
 class IntegerParameter : public AbsParameter
 {
 

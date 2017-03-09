@@ -30,7 +30,7 @@
 #include "Estimator/Estimator.hpp"
 #include "DataReader/Data.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class ChiOneD : public Estimator {
 
 public:

@@ -26,7 +26,7 @@
 #include "Core/FitResult.hpp"
 #include "Core/Logging.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 MinLogLH::MinLogLH(std::shared_ptr<Amplitude> amp, std::shared_ptr<Data> data,
 		std::shared_ptr<Data> phspSample,std::shared_ptr<Data> accSample,
 		unsigned int startEvent, unsigned int nEvents) :
@@ -66,9 +66,9 @@ void MinLogLH::Init()
 	//check size
 	if( _fraction.size() != _ampVec.size() )
 		throw std::runtime_error("MinLogLH::init() | List of fractions "
-				"("+std::to_string(_fraction.size())+")"
+				"("+std::to_string((long double)_fraction.size())+")"
 				" does not match with list of amplitudes"
-				"("+std::to_string(_ampVec.size())+")"
+				"("+std::to_string((long double)_ampVec.size())+")"
 				"!");
 
 	nEvts_ = _dataSample->getNEvents();

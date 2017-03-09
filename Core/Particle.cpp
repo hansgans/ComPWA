@@ -8,7 +8,7 @@
 
 #include "Core/Particle.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 Particle::Particle(double inPx, double inPy, double inPz,
 		double inE, int inpid, int c) :
 		px(inPx),py(inPy),pz(inPz),E(inE),pid(inpid),charge(c)

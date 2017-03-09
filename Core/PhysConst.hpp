@@ -26,7 +26,7 @@
 #include <vector>
 #include <Core/Parameter.hpp>
 
-namespace COMPWA {
+namespace ComPWA {
 class PhysConst
 {
 public:

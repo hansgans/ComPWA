@@ -8,7 +8,7 @@
 #include "Core/Logging.hpp"
 #include "Core/FitResult.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 void FitResult::writeText(std::string filename){
 	std::ofstream myfile;
 	myfile.open(filename);
@@ -102,14 +102,14 @@ void FitResult::printFitParameters(TableFormater* tableResult)
 			try{
 				iniPar = initialParameters.GetDoubleParameter(outPar->GetName());
 			} catch (BadParameter& bad){
-				iniPar = 0;
+				iniPar = std::shared_ptr<DoubleParameter>();
 			}
 		}
 		if(printTrue){
 			try{
 				truePar = trueParameters.GetDoubleParameter(outPar->GetName());
 			} catch (BadParameter& bad){
-				iniPar = 0;
+				iniPar = std::shared_ptr<DoubleParameter>();
 			}
 		}
 

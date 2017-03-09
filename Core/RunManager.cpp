@@ -33,7 +33,7 @@
 
 #include "Core/RunManager.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 RunManager::RunManager()
 {
 
@@ -126,16 +126,16 @@ void RunManager::SetAmplitudesData(
 	//check size
 	if( _fraction.size() != _ampVec.size() )
 		throw std::runtime_error("RunManager::SetAmpltiudesData() | "
-				"List of fractions ("+std::to_string(_fraction.size())+")"
+				"List of fractions ("+std::to_string((long double)_fraction.size())+")"
 				" does not match with list of amplitudes"
-				"("+std::to_string(_ampVec.size())+")"
+				"("+std::to_string((long double)_ampVec.size())+")"
 				"!");
 
 	if( _dataVec.size() != _ampVec.size() )
 		throw std::runtime_error("RunManager::SetAmpltiudesData() | "
-				"List of data samples ("+std::to_string(_dataVec.size())+")"
+				"List of data samples ("+std::to_string((long double)_dataVec.size())+")"
 				" does not match with list of amplitudes"
-				"("+std::to_string(_ampVec.size())+")"
+				"("+std::to_string((long double)_ampVec.size())+")"
 				"!");
 }
 

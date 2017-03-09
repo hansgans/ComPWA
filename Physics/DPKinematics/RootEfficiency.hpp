@@ -20,7 +20,7 @@
 #include "Core/Efficiency.hpp"
 #include "Physics/DPKinematics/DalitzKinematics.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 /**
  *  \class DalitzHistEfficiency
  *  \brief Efficiency provided by a histogram

@@ -25,7 +25,7 @@
 #include "Core/Logging.hpp"
 #include "DataReader/RootReader/RootReader.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 
 RootReader::RootReader()
 {

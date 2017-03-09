@@ -33,7 +33,7 @@
 #include "DataReader/Data.hpp"
 #include "Estimator/Estimator.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class MinLogLH : public Estimator {
 
 public:

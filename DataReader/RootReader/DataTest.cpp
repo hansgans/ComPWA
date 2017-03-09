@@ -17,7 +17,7 @@
 #include <vector>
 #include <string>
 
-namespace COMPWA {
+namespace ComPWA {
 BOOST_AUTO_TEST_SUITE(RootReaderSuite);
 
 BOOST_AUTO_TEST_CASE(ReadingCheck)

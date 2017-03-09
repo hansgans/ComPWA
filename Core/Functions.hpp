@@ -36,7 +36,7 @@
 #include "Core/AbsParameter.hpp"
 #include "Core/DataPoint.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class Strategy
 {
 public:

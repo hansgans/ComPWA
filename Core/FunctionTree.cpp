@@ -8,7 +8,7 @@
 #include "Core/Logging.hpp"
 #include "Core/FunctionTree.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 void FunctionTree::insertTree(std::shared_ptr<FunctionTree> inTree,
 		std::string parent)
 {
@@ -196,7 +196,7 @@ void FunctionTree::createNode( const std::string& name,
 		break;
 	} default : {
 		throw BadParameter("FunctionTree::createNode() | Bad parameter type "
-				+std::to_string(strat->OutType()));
+				+std::to_string((long double)strat->OutType()));
 	}
 	}//end switch
 

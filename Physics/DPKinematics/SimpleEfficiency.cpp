@@ -13,9 +13,9 @@
 #include <iostream>
 #include "Physics/DPKinematics/SimpleEfficiency.hpp"
 
-ClassImp(COMPWA::SimpleEfficiency);
+ClassImp(ComPWA::SimpleEfficiency);
 
-namespace COMPWA {
+namespace ComPWA {
 SimpleEfficiency::~SimpleEfficiency()
 {
 	delete passedHist;

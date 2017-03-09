@@ -24,7 +24,7 @@
 #include "Optimizer/Minuit2/MinuitResult.hpp"
 
 
-namespace COMPWA {
+namespace ComPWA {
 /************** HELPER FUNCTION FOR GSL VECTOR AND MATRIX *******************/
 /** Print gsl_matrix **/
 inline void gsl_matrix_print(const gsl_matrix *m)

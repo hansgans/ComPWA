@@ -40,7 +40,7 @@
 #include "Core/Generator.hpp"
 
 
-namespace COMPWA {
+namespace ComPWA {
 
 class Amplitude
 {

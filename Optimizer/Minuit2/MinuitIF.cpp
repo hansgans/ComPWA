@@ -30,7 +30,7 @@
 #include "Core/Logging.hpp"
 #include "Optimizer/Minuit2/MinuitIF.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 double shiftAngle(double v)
 {
 	double originalVal = v;

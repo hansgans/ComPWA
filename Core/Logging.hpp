@@ -11,7 +11,7 @@
 #include <boost/log/trivial.hpp>
 #include <boost/log/common.hpp>
 
-namespace COMPWA {
+namespace ComPWA {
 class Logging
 {
 public:

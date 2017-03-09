@@ -21,7 +21,7 @@
 #include "qft++.h"
 #include "Physics/AmplitudeSum/AmpGausRes.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 AmpGausRes::AmpGausRes(const char *name,
 		unsigned int varIdA,
 		std::shared_ptr<DoubleParameter> mag,

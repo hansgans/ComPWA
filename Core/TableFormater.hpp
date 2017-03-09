@@ -17,7 +17,7 @@
 
 #include "Core/ParameterList.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 using namespace std;
 
 class TableFormater

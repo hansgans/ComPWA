@@ -18,7 +18,7 @@
 
 
 #include "Core/Event.hpp"
-namespace COMPWA {
+namespace ComPWA {
 class dataPoint;
 
 static const char * formFactorTypeString[] = {

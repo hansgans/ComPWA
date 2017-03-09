@@ -33,7 +33,7 @@
 #include "Core/Amplitude.hpp"
 #include "Optimizer/ControlParameter.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class Estimator : public ControlParameter
 {
 

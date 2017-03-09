@@ -2,7 +2,7 @@
 #include "Core/Logging.hpp"
 #include "DataReader/Data.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 Data::Data(bool binning, unsigned int maxBins,double maxW) :
 fBinned(binning), fmaxBins(maxBins), maxWeight(maxW)
 {

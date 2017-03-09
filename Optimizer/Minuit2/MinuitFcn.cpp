@@ -21,7 +21,7 @@
 #include "Optimizer/Minuit2/MinuitFcn.hpp"
 #include "Optimizer/ControlParameter.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 using namespace ROOT::Minuit2;
 
 MinuitFcn::MinuitFcn(std::shared_ptr<ControlParameter> myData, ParameterList& parList) :

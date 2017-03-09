@@ -23,7 +23,7 @@
 #include "Core/Amplitude.hpp"
 #include "Core/ParameterList.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class BreitWigner : public Amplitude {
 
 public:

@@ -33,7 +33,7 @@
 
 //_____ D E F I N I T I O N S __________________________________________________
 
-namespace COMPWA {
+namespace ComPWA {
 class AsciiReader : public Data {
 
 public:

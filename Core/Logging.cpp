@@ -18,7 +18,7 @@
 
 #include "Core/Logging.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 void Logging::init(std::string out,boost::log::trivial::severity_level minLevel){
    boost::log::add_common_attributes();
    boost::log::add_console_log(std::cout,

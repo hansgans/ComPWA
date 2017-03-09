@@ -89,7 +89,7 @@
 #include "Estimator/Estimator.hpp"
 #include "Optimizer/Optimizer.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class DalitzKinematics;
 
 class RunManager

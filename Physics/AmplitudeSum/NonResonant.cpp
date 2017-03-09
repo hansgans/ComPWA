@@ -10,7 +10,7 @@
 #include "Physics/AmplitudeSum/NonResonant.hpp"
 
 
-namespace COMPWA {
+namespace ComPWA {
 NonResonant::NonResonant(const char *name,
 		std::shared_ptr<DoubleParameter> mag,
 		std::shared_ptr<DoubleParameter> phase,

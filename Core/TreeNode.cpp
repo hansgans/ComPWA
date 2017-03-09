@@ -19,7 +19,7 @@
 #include "Core/Functions.hpp"
 #include "Core/Logging.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 TreeNode::TreeNode(std::string name, std::shared_ptr<AbsParameter> intResult, std::shared_ptr<Strategy> strat, std::shared_ptr<TreeNode> parent)
 :_name(name),_changed(true),_strat(strat){
 	_value.push_back(intResult);

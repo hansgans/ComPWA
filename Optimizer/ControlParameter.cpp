@@ -15,7 +15,7 @@
 
 #include "Optimizer/ControlParameter.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 std::shared_ptr<ControlParameter> ControlParameter::Instance() {
     return ControlParameter::instance_;
 }

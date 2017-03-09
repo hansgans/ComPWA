@@ -13,7 +13,7 @@
 #include "Core/Event.hpp"
 #include "DataReader/CorrectionTable.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class DataCorrection
 {
 public:

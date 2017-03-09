@@ -29,7 +29,7 @@
 
 #include "Physics/AmplitudeSum/AmpSumIntensity.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 AmpSumIntensity::AmpSumIntensity(std::string name,
 		normStyle ns, std::shared_ptr<Efficiency> eff,
 		unsigned int nCalls) :
@@ -202,7 +202,7 @@ void AmpSumIntensity::printFractions()
 	outStr<<"Fit fractions for all amplitudes: \n";
 	double sumFrac=0;
 	auto it = GetResonanceItrFirst();
-	double norm = 1/integral(GetResonanceItrList(), 0, _nCalls);
+	double norm = 1/integral(GetResonanceItrList(), std::shared_ptr<Efficiency>(), _nCalls);
 	for( ; it != GetResonanceItrLast(); ++it){
 		double frac = (*it)->GetMagnitude()*norm;
 		sumFrac+=frac;
@@ -292,7 +292,7 @@ const double AmpSumIntensity::GetIntegral(std::vector<resonanceItr> resoList)
 {
 	return AmpSumIntensity::integral(
 			resoList,
-			0, //efficiency not included
+			std::shared_ptr<Efficiency>(), //efficiency not included
 			_nCalls
 	);
 }
@@ -747,7 +747,7 @@ std::string AmpSumIntensity::GetNameOfResonance(unsigned int id)
 {
 	if(id < 0 || id > resoList.size() )
 		throw std::runtime_error("AmpSumIntensity::GetNameOfResonance() | "
-				"Invalid resonance ID="+std::to_string(id)+"! Resonance not found?");
+				"Invalid resonance ID="+std::to_string((long double)id)+"! Resonance not found?");
 	return resoList.at(id)->GetName();
 }
 
@@ -761,7 +761,7 @@ std::shared_ptr<Resonance> AmpSumIntensity::GetResonance(unsigned int id)
 {
 	if(id < 0 || id > resoList.size() )
 		throw std::runtime_error("AmpSumIntensity::GetResonance() | "
-				"Invalid resonance ID="+std::to_string(id)+"! Resonance not found?");
+				"Invalid resonance ID="+std::to_string((long double)id)+"! Resonance not found?");
 	return resoList.at(id);
 }
 

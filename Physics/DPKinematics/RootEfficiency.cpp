@@ -13,7 +13,7 @@
 #include "Core/DataPoint.hpp"
 #include "Core/Logging.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 DalitzHistEfficiency::DalitzHistEfficiency(TEfficiency* eff) : effHist(new TEfficiency(*eff)){
 	BOOST_LOG_TRIVIAL(debug) << "DalitzHistEfficiency: creating efficiency from existing TEfficiency object!";
 }

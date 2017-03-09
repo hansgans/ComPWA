@@ -14,7 +14,7 @@
 #include <iostream>
 #include <vector>
 
-namespace COMPWA {
+namespace ComPWA {
 class dataPoint;
 
 /**

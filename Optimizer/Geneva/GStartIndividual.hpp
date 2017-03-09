@@ -59,7 +59,7 @@
 #include <geneva/GParameterSet.hpp>
 #include <geneva/GConstrainedDoubleObject.hpp>
 
-namespace COMPWA {
+namespace ComPWA {
 namespace Gem
 {
 namespace Geneva

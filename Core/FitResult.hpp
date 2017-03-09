@@ -43,7 +43,7 @@
 #include "Core/TableFormater.hpp"
 #include "Core/PhysConst.hpp"
 
-namespace COMPWA {
+namespace ComPWA {
 class FitResult
 {
 public:
