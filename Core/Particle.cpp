@@ -23,7 +23,7 @@ Particle::~Particle()
 
 std::ostream& operator<< (std::ostream& stream, const Particle& p){
 	stream<< "Particle id="<<p.pid<<" charge="<<p.charge
-			<<" p4=("<<p.px<<","<<p.py<<","<<p.pz<<","<<p.px<<")";
+			<<" p4=("<<p.px<<","<<p.py<<","<<p.pz<<","<<p.E<<")";
 	return stream;
 }
 

@@ -148,7 +148,9 @@ void DalitzKinematics::EventToDataPoint(const Event& ev, dataPoint& point) const
 	const Particle& part3 = ev.getParticle(2);
 	double m23sq = Particle::invariantMass(part2,part3);
 	double m13sq = Particle::invariantMass(part1,part3);
+	double m12sq = Particle::invariantMass(part1,part2);
 	//FillDataPoint resets weight and efficiency
+	//FillDataPoint(0,1,m23sq,m13sq,m12sq,point);
 	FillDataPoint(0,1,m23sq,m13sq,point);
 
 	point.setWeight(ev.getWeight());//reset weight
@@ -159,6 +161,12 @@ void DalitzKinematics::EventToDataPoint(const Event& ev, dataPoint& point) const
 
 void DalitzKinematics::FillDataPoint(int a, int b,
 		double invMassSqA, double invMassSqB, dataPoint& point) const
+{
+	FillDataPoint(a,b,invMassSqA, invMassSqB, getThirdVariableSq(invMassSqA,invMassSqB), point);
+}
+
+void DalitzKinematics::FillDataPoint(int a, int b,
+		double invMassSqA, double invMassSqB,  double invMassSqC, dataPoint& point) const
 {
 	if( a != 0 && a != 1 && a != 2){
 		std::cout<<"A "<<a<<" "<<b<<" "<<invMassSqA<<std::endl;
@@ -180,7 +188,8 @@ void DalitzKinematics::FillDataPoint(int a, int b,
 	if( (a==1 && b==2) || (a==2 && b==1) ) c=0;
 	point.setVal(a,invMassSqA);
 	point.setVal(b,invMassSqB);
-	point.setVal(c,getThirdVariableSq(invMassSqA,invMassSqB));
+	//point.setVal(c,getThirdVariableSq(invMassSqA,invMassSqB));
+	point.setVal(c,invMassSqC);
 
 	double m23sq = point.getVal(0);
 	double m13sq = point.getVal(1);

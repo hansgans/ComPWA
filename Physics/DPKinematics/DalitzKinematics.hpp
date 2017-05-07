@@ -46,6 +46,10 @@ public:
 	void FillDataPoint(int a, int b, double invMassSqA, double invMassSqB,
 			dataPoint& point) const;
 
+	//! Event to dataPoint conversion
+	void FillDataPoint(int a, int b, double invMassSqA, double invMassSqB, double invMassSqC,
+			dataPoint& point) const;
+
 	/**! Generate contour of phsp boundary
 	 *
 	 * @param xsys Which subsystem should be plotted on x?
