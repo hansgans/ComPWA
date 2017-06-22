@@ -86,26 +86,26 @@ void DalitzKinematics::init()
 	_varNames.push_back("m13sq");
 	_varNames.push_back("m12sq");
 	// Angle between particle 1 and 3 in the rest frame of 1 and 2
-	_varNames.push_back("cosTheta12_13");
+	_varNames.push_back("cosTheta12_CP");
 	// Angle between particle 2 and 3 in the rest frame of 1 and 2
 	_varNames.push_back("cosTheta12_23");
 	// Angle between particle 1 and 2 in the rest frame of 1 and 3
 	_varNames.push_back("cosTheta13_12");
 	// Angle between particle 2 and 3 in the rest frame of 1 and 3
-	_varNames.push_back("cosTheta13_23");
+	_varNames.push_back("cosTheta13_CP");
 	// Angle between particle 1 and 3 in the rest frame of 2 and 3
-	_varNames.push_back("cosTheta23_13");
+	_varNames.push_back("cosTheta23_CP");
 	// Angle between particle 1 and 2 in the rest frame of 2 and 3
 	_varNames.push_back("cosTheta23_12");
 
 	_varTitles.push_back("m_{"+name2+name3+"}^{2} [ GeV^{2}/c^{4} ]");
 	_varTitles.push_back("m_{"+name1+name3+"}^{2} [ GeV^{2}/c^{4} ]");
 	_varTitles.push_back("m_{"+name1+name2+"}^{2} [ GeV^{2}/c^{4} ]");
-	_varTitles.push_back("cos(#Theta^{"+name1+name2+"}_{"+name1+name3+"})");
-	_varTitles.push_back("cos(#Theta^{"+name1+name2+"}_{"+name2+name3+"})");
+	_varTitles.push_back("cos(#Theta^{"+name1+name2+"}_{CP})");
+	_varTitles.push_back("cos(#Theta^{"+name1+name2+"}_{"+name3+name2+"})");
 	_varTitles.push_back("cos(#Theta^{"+name1+name3+"}_{"+name1+name2+"})");
-	_varTitles.push_back("cos(#Theta^{"+name1+name3+"}_{"+name2+name3+"})");
-	_varTitles.push_back("cos(#Theta^{"+name2+name3+"}_{"+name1+name3+"})");
+	_varTitles.push_back("cos(#Theta^{"+name1+name3+"}_{CP})");
+	_varTitles.push_back("cos(#Theta^{"+name2+name3+"}_{CP})");
 	_varTitles.push_back("cos(#Theta^{"+name2+name3+"}_{"+name1+name2+"})");
 
 	BOOST_LOG_TRIVIAL(debug) << "DalitzKinematics::init() | "
@@ -149,9 +149,10 @@ void DalitzKinematics::EventToDataPoint(const Event& ev, dataPoint& point) const
 	double m23sq = Particle::invariantMass(part2,part3);
 	double m13sq = Particle::invariantMass(part1,part3);
 	double m12sq = Particle::invariantMass(part1,part2);
-	//FillDataPoint resets weight and efficiency
-	//FillDataPoint(0,1,m23sq,m13sq,m12sq,point);
-	FillDataPoint(0,1,m23sq,m13sq,point);
+	
+	FillDataPoint(0,1,m23sq,m13sq,m12sq,point);
+	//FillDataPoint(0,1,m23sq,m13sq,point);
+	//std::cout<<m12sq<< " "<<getThirdVariableSq(m23sq,m13sq)<<std::endl;
 
 	point.setWeight(ev.getWeight());//reset weight
 	point.setEfficiency(ev.getEfficiency());
@@ -195,12 +196,24 @@ void DalitzKinematics::FillDataPoint(int a, int b,
 	double m13sq = point.getVal(1);
 	double m12sq = point.getVal(2);
 
-	point.setVal(3,helicityAngle(_M,m1,m2,m3,m12sq,m13sq));
-	point.setVal(4,helicityAngle(_M,m2,m1,m3,m12sq,m23sq));
-	point.setVal(5,helicityAngle(_M,m1,m3,m2,m13sq,m12sq));
-	point.setVal(6,helicityAngle(_M,m3,m1,m2,m13sq,m23sq));
-	point.setVal(7,helicityAngle(_M,m3,m2,m1,m23sq,m13sq));
-	point.setVal(8,helicityAngle(_M,m2,m3,m1,m23sq,m12sq));
+	 //Angle in the rest frame of (13) between (3) and (2)
+	point.setVal(3,helicityAngle(_M,m3,m1,m2,m13sq,m23sq)); // a_2_CP
+	//point.setVal(3,helicityAngle(_M,m1,m2,m3,m12sq,m13sq));// a_2_CP (wrong)
+	 //Angle in the rest frame of (12) between (2) and (3)
+	point.setVal(4,helicityAngle(_M,m2,m1,m3,m12sq,m23sq)); // a_2
+	
+	 //Angle in the rest frame of (12) between (2) and (3)
+	point.setVal(5,helicityAngle(_M,m1,m3,m2,m13sq,m12sq)); // a_0+
+	//Angle in the rest frame of (13) between (3) and (2)
+	//point.setVal(6,helicityAngle(_M,m3,m1,m2,m13sq,m23sq)); // a_0+_CP (wrong)
+	point.setVal(6,helicityAngle(_M,m1,m2,m3,m12sq,m13sq)); // a_0+_CP
+
+	
+	 //Angle in the rest frame of (23) between (3) and (1)
+	point.setVal(7,helicityAngle(_M,m3,m2,m1,m23sq,m13sq)); //phi(1020)_CP
+	 //Angle in the rest frame of (23) between (2) and (1)
+	point.setVal(8,helicityAngle(_M,m2,m3,m1,m23sq,m12sq)); //phi_1020
+	
 
 	return;
 }
