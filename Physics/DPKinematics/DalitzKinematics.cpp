@@ -148,11 +148,10 @@ void DalitzKinematics::EventToDataPoint(const Event& ev, dataPoint& point) const
 	const Particle& part3 = ev.getParticle(2);
 	double m23sq = Particle::invariantMass(part2,part3);
 	double m13sq = Particle::invariantMass(part1,part3);
-	double m12sq = Particle::invariantMass(part1,part2);
+	//double m12sq = Particle::invariantMass(part1,part2);
+	double m12sq = getThirdVariableSq(m23sq,m13sq);
 	
 	FillDataPoint(0,1,m23sq,m13sq,m12sq,point);
-	//FillDataPoint(0,1,m23sq,m13sq,point);
-	//std::cout<<m12sq<< " "<<getThirdVariableSq(m23sq,m13sq)<<std::endl;
 
 	point.setWeight(ev.getWeight());//reset weight
 	point.setEfficiency(ev.getEfficiency());
