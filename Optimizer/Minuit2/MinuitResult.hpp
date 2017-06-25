@@ -173,6 +173,7 @@ protected:
 
 	double AIC;
 	double BIC;
+	double nResSignif;
 
 	//====== OUTPUT =====
 	//! Simplified fit result output
@@ -238,6 +239,7 @@ private:
 		ar & BOOST_SERIALIZATION_NVP(penaltyScale);
 		ar & BOOST_SERIALIZATION_NVP(AIC);
 		ar & BOOST_SERIALIZATION_NVP(BIC);
+		ar & BOOST_SERIALIZATION_NVP(nResSignif);
 		ar & BOOST_SERIALIZATION_NVP(nEvents);
 		ar & BOOST_SERIALIZATION_NVP(edm);
 		ar & BOOST_SERIALIZATION_NVP(cov);

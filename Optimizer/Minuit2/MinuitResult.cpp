@@ -436,12 +436,13 @@ void MinuitResult::genOutput(std::ostream& out, std::string opt)
 	BIC = calcBIC(frac)-penalty;
 	out<<"AIC: "<<AIC<<std::endl;
 	out<<"BIC: "<<BIC<<std::endl;
-	double r=0;
+
+	nResSignif=0;
 	for(int i=0; i<fractionList.GetNDouble(); i++){
 		double val = std::fabs(fractionList.GetDoubleParameter(i)->GetValue());
-		if(val > 0.001) r++;
+		if(val > 0.001) nResSignif++;
 	}
-	out<<"Number of Resonances > 10^-3: "<<r<<std::endl;
+	out<<"Number of Resonances > 10^-3: "<<nResSignif<<std::endl;
 
 	if(calcInterference){
 		auto ampItr = _ampVec.begin();
