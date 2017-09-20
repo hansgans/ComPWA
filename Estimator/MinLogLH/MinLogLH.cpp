@@ -394,8 +394,8 @@ double MinLogLH::calcPenalty()
 		magSum += v;
 		resoList.push_back(it);
 	}
-	return ( _penaltyLambda*magSum / std::sqrt(amp->GetIntegral(resoList)) );
-//	return (_penaltyLambda*magSum);
+	//return ( _penaltyLambda*magSum / std::sqrt(amp->GetIntegral(resoList)) );
+	return (_penaltyLambda*magSum);
 }
 
 //double MinLogLH::calcPenalty()

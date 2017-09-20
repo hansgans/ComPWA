@@ -435,7 +435,7 @@ void AmpAbsDynamicalFunction::put(boost::property_tree::ptree &pt)
 		pt.put("mesonRadius_min", _mesonRadius->GetMinValue());
 		pt.put("mesonRadius_max", _mesonRadius->GetMaxValue());
 	}
-	pt.put("int", _spin);
+	pt.put("Spin", _spin);
 	pt.put("Parity", _parity);
 	if( _cparity )
 		pt.put("Cparity", _cparity);

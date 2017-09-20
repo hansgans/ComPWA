@@ -437,12 +437,16 @@ void MinuitResult::genOutput(std::ostream& out, std::string opt)
 	out<<"AIC: "<<AIC<<std::endl;
 	out<<"BIC: "<<BIC<<std::endl;
 
-	nResSignif=0;
+	out<<"Resonances > 10^-3: ";
 	for(int i=0; i<fractionList.GetNDouble(); i++){
 		double val = std::fabs(fractionList.GetDoubleParameter(i)->GetValue());
-		if(val > 0.001) nResSignif++;
+		if(val > 0.001) {
+			resSignif.push_back(i);
+			out<<i<<" ";
+		}
 	}
-	out<<"Number of Resonances > 10^-3: "<<nResSignif<<std::endl;
+	out<<std::endl;
+	out<<"Number of Resonances > 10^-3: "<<resSignif.size()<<std::endl;
 
 	if(calcInterference){
 		auto ampItr = _ampVec.begin();
