@@ -24,8 +24,9 @@ target_link_libraries(HelicityFormalism
     Data
     Dynamics
     qft++
-  INTERFACE
-    Tools
+  # INTERFACE
+    # Tools
+    Integration
 )
 
 target_include_directories(HelicityFormalism

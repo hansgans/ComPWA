@@ -38,7 +38,7 @@ class MCIntegrationStrategy : public IntegrationStrategy {
 public:
   MCIntegrationStrategy(std::shared_ptr<const ComPWA::Data::DataSet> phspsample,
                         double phspvolume = 1.0);
-  double
+  virtual double
   integrate(std::shared_ptr<const ComPWA::Intensity> intensity) const final;
 
   std::shared_ptr<ComPWA::FunctionTree>
