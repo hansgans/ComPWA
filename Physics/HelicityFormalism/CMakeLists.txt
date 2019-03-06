@@ -12,7 +12,14 @@ set(lib_srcs
     ../NormalizationAmplitudeDecorator.cpp
 )
 
-set(lib_headers AmpWignerD.hpp HelicityDecay.hpp HelicityKinematics.hpp)
+set(lib_headers AmpWignerD.hpp HelicityDecay.hpp HelicityKinematics.hpp
+    ../IncoherentIntensity.hpp ../CoherentIntensity.hpp
+    ../SequentialAmplitude.hpp ../SubSystem.hpp
+    ../IntensityBuilderXML.hpp ../StrengthIntensityDecorator.hpp
+    ../ParticleStateTransitionKinematicsInfo.hpp
+    ../NormalizationIntensityDecorator.hpp
+    ../NormalizationAmplitudeDecorator.hpp
+)
 
 add_library(HelicityFormalism
   SHARED ${lib_srcs} ${lib_headers}

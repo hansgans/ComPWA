@@ -224,7 +224,9 @@ int main(int argc, char **argv) {
   // 4) Generate a data sample given intensity and kinematics
   //---------------------------------------------------
   std::shared_ptr<ComPWA::Data::DataSet> sample =
-      ComPWA::Tools::generate(1000, kin, gen, intens, phspSample);
+      ComPWA::Tools::generate(10000, kin, gen, intens, phspSample);
+      std::cout<<sample->getEventList().size()<<std::endl;
+      exit(1);
   sample->convertEventsToParameterList(kin);
   phspSample->convertEventsToParameterList(kin);
 
