@@ -13,6 +13,9 @@ if(${Python3_FOUND})
       ${CMAKE_CURRENT_SOURCE_DIR}/pycompwa/expertsystem
       ${CMAKE_CURRENT_BINARY_DIR}/pycompwa/expertsystem
     COMMAND ${CMAKE_COMMAND} -E create_symlink 
+      ${CMAKE_CURRENT_SOURCE_DIR}/pycompwa/particle_list.xml
+      ${CMAKE_CURRENT_BINARY_DIR}/pycompwa/particle_list.xml
+    COMMAND ${CMAKE_COMMAND} -E create_symlink 
       ${CMAKE_CURRENT_SOURCE_DIR}/pycompwa/plotting
       ${CMAKE_CURRENT_BINARY_DIR}/pycompwa/plotting
     COMMAND ${CMAKE_COMMAND} -E create_symlink 

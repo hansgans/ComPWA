@@ -15,6 +15,8 @@ Logging::Logging(std::string level, std::string filename) {
   el::Configurations DefaultConfig;
   // initialize with default values
   DefaultConfig.setToDefault();
+  DefaultConfig.setGlobally(el::ConfigurationType::SubsecondPrecision, "0");
+  DefaultConfig.setGlobally(el::ConfigurationType::PerformanceTracking, "0");
   if (filename.empty()) {
     DefaultConfig.setGlobally(el::ConfigurationType::ToFile, "0");
     LOG(INFO) << "Logging to file disabled!";
@@ -74,11 +76,18 @@ void Logging::setLogLevel(std::string Level) {
 
   el::Logger *logger =
       ELPP->registeredLoggers()->get(el::base::consts::kDefaultLoggerId);
-
+  
+  // Enable all levels
+  logger->configurations()->set(el::Level::Global,
+                                el::ConfigurationType::Enabled, "1");
+  // Disable levels lower than Level
   for (auto x : OffLevels) {
     logger->configurations()->set(x, el::ConfigurationType::Enabled, "0");
   }
   logger->reconfigure();
+  
+  LogLevel = Level;
 };
 
+std::string Logging::getLogLevel() { return LogLevel; };
 } // namespace ComPWA

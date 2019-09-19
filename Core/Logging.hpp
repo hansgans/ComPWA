@@ -21,6 +21,11 @@ public:
   Logging(std::string level = "INFO", std::string filename = "");
 
   void setLogLevel(std::string level);
+  
+  std::string getLogLevel();
+  
+private:
+  std::string LogLevel;
 };
 
 } // namespace ComPWA
