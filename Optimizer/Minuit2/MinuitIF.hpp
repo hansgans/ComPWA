@@ -28,7 +28,6 @@ public:
   
   bool UseHesse = 1;
   bool UseMinos = 0;
-  
   /// Minuit strategy (low, medium(default), high)
   /// See https://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.html#m-strategy
   /// Sets Minuit configuration variables to pre-defined values
