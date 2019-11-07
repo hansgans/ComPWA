@@ -102,7 +102,7 @@ public:
             std::string name = "", std::string title = "",
             Color_t color = kBlack);
   void fill(const std::vector<ComPWA::Event> &data,
-            FunctionTreeIntensity &intens, bool normalize = false,
+            Intensity &intens, bool normalize = false,
             std::string name = "", std::string title = "",
             Color_t color = kBlack);
   void plot();

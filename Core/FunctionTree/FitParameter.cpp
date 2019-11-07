@@ -91,7 +91,7 @@ void FitParameter::updateParameter(std::shared_ptr<FitParameter> newPar) {
 
 void FitParameter::setValue(const double inVal) {
   if (IsFixed)
-    throw ParameterFixed("FitParameter:: () | Parameter " + name() +
+    throw ParameterFixed("FunctionTree::FitParameter::setValue() | Parameter " + name() +
                          " is fixed!");
   // Call notify only if value has changed! Otherwise tree is
   // recalculated also in case where current parameter is not changed

@@ -29,7 +29,7 @@ std::vector<double> getGlobalCorrelations(
 
 MinuitResult::MinuitResult(const FitResult &Result,
                            const ROOT::Minuit2::FunctionMinimum &FMin)
-    : FitResult(Result), IsValid(FMin.IsValid()),
+    : FitResult(Result),
       CovPosDef(FMin.HasPosDefCovar()),
       HasValidParameters(FMin.HasValidParameters()),
       HasValidCov(FMin.HasValidCovariance()),
