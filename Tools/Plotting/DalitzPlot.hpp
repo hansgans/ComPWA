@@ -101,10 +101,9 @@ public:
   void fill(const std::vector<ComPWA::Event> &data, bool normalize = false,
             std::string name = "", std::string title = "",
             Color_t color = kBlack);
-  void fill(const std::vector<ComPWA::Event> &data,
-            Intensity &intens, bool normalize = false,
-            std::string name = "", std::string title = "",
-            Color_t color = kBlack);
+  void fill(const std::vector<ComPWA::Event> &data, Intensity &intens,
+            bool normalize = false, std::string name = "",
+            std::string title = "", Color_t color = kBlack);
   void plot();
 
 private:

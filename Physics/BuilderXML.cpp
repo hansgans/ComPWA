@@ -531,8 +531,9 @@ IntensityBuilderXML::createCoefficientAmplitudeFT(
       if (optr.is_initialized()) {
         double r(optr.value());
         if (r < 0.0)
-          throw BadConfig("IntensityBuilderXML::createCoefficientAmplitudeFT() | "
-                          "PreFactor Magnitude below zero!");
+          throw BadConfig(
+              "IntensityBuilderXML::createCoefficientAmplitudeFT() | "
+              "PreFactor Magnitude below zero!");
         double p(0.0);
         boost::optional<double> optp =
             v.second.get_optional<double>("<xmlattr>.Phase");
@@ -552,7 +553,8 @@ IntensityBuilderXML::createCoefficientAmplitudeFT(
       AmpPT = v.second;
     } else if (v.first != "<xmlattr>") {
       throw BadConfig("IntensityBuilderXML::createCoefficientAmplitudeFT() | "
-                      "Unknown tag " + v.first + "!");
+                      "Unknown tag " +
+                      v.first + "!");
     }
   }
 
@@ -609,7 +611,8 @@ IntensityBuilderXML::createSequentialAmplitudeFT(
       Amplitudes.push_back(AmpTree);
     } else if (v.first != "<xmlattr>") {
       throw BadConfig("SequentialAmplitude::createSequentialAmplitude() | "
-                      "Unknown tag " + v.first + "!");
+                      "Unknown tag " +
+                      v.first + "!");
     }
   }
 
